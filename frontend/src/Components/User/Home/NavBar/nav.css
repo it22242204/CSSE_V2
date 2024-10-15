@@ -1,0 +1,61 @@
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 12%;
+  background-color: #00A86B;
+  height: 100px;
+}
+.nav_con_user {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 12%;
+}
+.nav_logo_user {
+  width: 80px;
+}
+.nav_item_user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.cart_icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+.cart_icon:hover {
+  color: #05043f;
+}
+.nav_btn_log {
+  background-color: #05043f;
+  color: white;
+  border: 2px solid #05043f;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.nav_btn_regi {
+  color: #05043f;
+  background-color: white;
+  border: 2px solid #05043f;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.navitem {
+  font-size: 23px;
+  cursor: pointer;
+}
+.navitem:hover {
+  color: #05043f;
+}

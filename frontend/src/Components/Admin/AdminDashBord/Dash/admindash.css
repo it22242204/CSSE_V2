@@ -1,0 +1,25 @@
+.welcomebox_admin {
+  display: flex;
+  text-align: center;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+}
+.welcome_sub_box_admin {
+  border: 2px solid #05043f;
+  border-radius: 5px;
+  margin-left: 200px;
+  padding: 25px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add box shadow */
+}
+.welcomeimg {
+  width: 500px;
+}
+.adminsmalnav {
+  color: white;
+  padding: 10px 0;
+  font-size: 30px;
+  text-align: center;
+  background-color: #05043f;
+}

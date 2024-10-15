@@ -1,0 +1,245 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.select_boxset {
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  height: 100vh;
+  display: flex;
+}
+.select_box {
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  color: white;
+  background-color: #05043f;
+}
+
+.boxrviv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  border: 0;
+  text-align: center;
+  padding: 25px 8%;
+}
+.rate_box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  text-align: start;
+  font-weight: bold;
+  border: 2px solid #05043f;
+}
+.rate_details {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.577);
+  margin: 0 0 8px;
+}
+.itemimg_rate{
+  width: 150px;
+  border-radius: 5px;
+  height: 150px;
+}
+.rate_info_box {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}
+.comment_rate {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.tpic_cen {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 35px;
+  text-transform: capitalize;
+}
+.itemimg_addreate {
+  width: 100%;
+  height: 250px;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.profile_icon {
+  font-size: 50px;
+}
+.comet {
+  margin-top: 15px;
+  font-size: 20px;
+}
+.star_icon {
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.add_rate {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin: 8px;
+  border: 2px solid #05043f;
+  background-color: #05043f;
+}
+
+.link_btn_set {
+  justify-content: space-between;
+  display: flex;
+  padding: 0 12%;
+  margin: 25px 0;
+}
+
+.fulldis_data {
+  padding: 15px 12%;
+}
+
+.cen_h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.serch_inpt {
+  font-size: 17px;
+  border-radius: 3px;
+  padding: 4px 10px;
+  width: 300px;
+  border: 2px solid #05043f;
+}
+
+.form_rate {
+  width: 550px;
+  border-radius: 3px;
+  padding: 25px;
+  width: 450px;
+  margin: 25px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #05043f;
+}
+
+.form_lable_rate {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form_input_rate {
+  font-size: 17px;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 4px 10px;
+  width: 100%;
+  border: 2px solid #05043f;
+}
+
+.centerbtn_rate {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid #05043f;
+  background-color: #05043f;
+}
+
+.table_details_admin {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.table_details_admin .admin_tbl_th,
+.table_details_admin .admin_tbl_td {
+  border: 2px solid #65a4da;
+  padding: 8px;
+}
+
+.table_details_admin .admin_tbl_th {
+  background-color: #65a4da;
+  color: white;
+  font-size: 18px;
+}
+.tbl_data {
+  padding: 0 12%;
+}
+.update_rate {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 4px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+  border: 2px solid #05043f;
+  background-color: #05043f;
+}
+
+.dlt_rate {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 4px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+  border: 2px solid red;
+  background-color: red;
+}
+.gmil {
+  text-transform: none;
+}
+.rate-full-box {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+.rate-full-box-form {
+  width: 550px;
+  border-radius: 3px;
+  padding: 25px;
+  width: 450px;
+  margin: 25px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #05043f;
+}
+.rate-full-box-label {
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.rate-full-box-input {
+  width: 100%;
+  font-size: 17px;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 4px 10px;
+  border: 2px solid #05043f;
+}
+.rate_topic {
+  font-size: 45px;
+  text-align: center;
+}
