@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import Logo from "./img/logo.jpg";
+import Logo from "./img/recycle.png";
 const Sidebar = ({ children }) => {
   return (
     <div>
@@ -17,41 +17,42 @@ const Sidebar = ({ children }) => {
               >
                 DashBoard
               </p>
-              <p
+             
+                <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/delivrydata")}
+                onClick={() => (window.location.href = "/userdetails")}
               >
-                Delivery
+                User Profiles
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/employeedetails")}
               >
-                Employee
+                Driver Profiles
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/inventoryitemdetails")}
               >
-                Inventory
+                Special Collection
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/admin-allproducts")}
               >
-                Product
+               Request Handling
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/supplierdetails")}
               >
-                Supplier
+                Recycle Division
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/userdetails")}
               >
-                User
+                Profile
               </p>
             </div>
           </div>

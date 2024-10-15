@@ -17,9 +17,10 @@
   width: 500px;
 }
 .adminsmalnav {
-  color: white;
+  color: #05043f;
   padding: 10px 0;
   font-size: 30px;
   text-align: center;
-  background-color: #05043f;
+  background-color: #00A86B;
+  height: 100px;
 }
