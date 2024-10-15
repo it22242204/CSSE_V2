@@ -6,6 +6,7 @@ function BeforHome() {
   return (
     <div>
       <BeforNav />
+      
       <div className="bkimg">
         <div>
           <div className="dis_div">
@@ -26,6 +27,20 @@ function BeforHome() {
               >
                 Get Start
               </button>
+            <div className="btngroup">
+            <button
+            className="welcome_btn"
+            onClick={() => (window.location.href = "/login")}
+          >
+            Login
+          </button>
+          <button
+            className="welcome_btn"
+            onClick={() => (window.location.href = "/userregister")}
+          >
+            Register
+          </button>
+          </div>
               </div>
             </div>
           </div>

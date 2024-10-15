@@ -17,18 +17,6 @@ function BeforNav() {
           <h3 className="navitem" onClick={notcompleate}>Contact Us</h3>
           <button
             className="nav_btn_log"
-            onClick={() => (window.location.href = "/login")}
-          >
-            Login
-          </button>
-          <button
-            className="nav_btn_regi"
-            onClick={() => (window.location.href = "/userregister")}
-          >
-            Register
-          </button>
-          <button
-            className="nav_btn_log"
             onClick={() => (window.location.href = "/adminlogin")}
           >
             Admin
