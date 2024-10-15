@@ -17,18 +17,17 @@ const Sidebar = ({ children }) => {
               >
                 DashBoard
               </p>
-             
-                <p
+              <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/userdetails")}
+                onClick={() => (window.location.href = "/delivrydata")}
               >
-                User Profiles
+                User Profile
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/employeedetails")}
               >
-                Driver Profiles
+                Driver Profile
               </p>
               <p
                 className="nav_item"
@@ -46,13 +45,13 @@ const Sidebar = ({ children }) => {
                 className="nav_item"
                 onClick={() => (window.location.href = "/supplierdetails")}
               >
-                Recycle Division
+                Recycle
               </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/userdetails")}
               >
-                Profile
+                User
               </p>
             </div>
           </div>
