@@ -27,6 +27,19 @@ function BeforNav() {
           >
             Register
           </button>
+          <button
+            className="nav_btn_log"
+            onClick={() => (window.location.href = "/adminlogin")}
+          >
+            Admin
+          </button>
+          <button
+            className="nav_btn_regi"
+            onClick={() => (window.location.href = "/driverlogin")}
+          >
+            Driver
+          </button>
+
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 //ADMIN
 import DliveryData from "./Components/Admin/DiliveryManagement/Dlivery/DliveryData/DliveryData";
 //--Driver
+import DriverLogin from "./Components/Driver/DriverLogin/DriverLogin";
 import AddDriver from "./Components/Admin/DiliveryManagement/Driver/AddDriver/AddDriver";
 import DriverDetails from "./Components/Admin/DiliveryManagement/Driver/DriverDetails/DriverDetails";
 import UpdateDriver from "./Components/Admin/DiliveryManagement/Driver/UpdateDriver/UpdateDriver";
@@ -96,7 +97,7 @@ function App() {
 
           {/* --------------- ADMIN Side ---------------*/}
           {/*Admin Home*/}
-          <Route exact path="/admin/login" element={<AdminLogin />} />
+          <Route exact path="/adminlogin" element={<AdminLogin />} />
           {/*Admin Home*/}
           <Route exact path="/admin" element={<AdminDash />} />
           {/*Dilivery Management*/}
@@ -159,6 +160,9 @@ function App() {
           <Route path="/view-cart" element={<ViewCart />} />
           <Route path="/update-cart/:id" element={<EditCart />} />
           <Route path="/add-payment" element={<AddPayment />} />
+
+          {/* Driver Panel */}
+          <Route path="/driverlogin" element={<DriverLogin />} />
         </Routes>
       </React.Fragment>
     </div>
