@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 function AfterNav() {
   return (
     <div>
-      <div>
+      <div className="nav_bar">
         <div className="nav_con_user">
           <div>
             <img src={Logo} alt="logo_nav" className="nav_logo_user" />
@@ -21,13 +21,25 @@ function AfterNav() {
               className="navitem"
               onClick={() => (window.location.href = "/viewall")}
             >
-              Product
+              Request
             </h3>
             <h3
               className="navitem"
               onClick={() => (window.location.href = "/ratedetails")}
             >
-              Feedback
+              Special Collection
+            </h3>
+            <h3
+              className="navitem"
+              onClick={() => (window.location.href = "/viewall")}
+            >
+              Recycle Product
+            </h3>
+            <h3
+              className="navitem"
+              onClick={() => (window.location.href = "/ratedetails")}
+            >
+              Recycle Service
             </h3>
             <FaShoppingCart
               className="cart_icon"

@@ -1,7 +1,7 @@
 .nav_bar {
   display: flex;
   justify-content: space-between;
-  padding: 15px 12%;
+  padding: 10px 12%;
   background-color: #00A86B;
   height: 100px;
 }
@@ -11,13 +11,16 @@
   padding: 15px 12%;
 }
 .nav_logo_user {
+ 
+  margin-left: -320px;
   width: 80px;
 }
 .nav_item_user {
+  margin-left: -80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 80px;
 }
 .cart_icon {
   font-size: 30px;
@@ -53,8 +56,11 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .navitem {
-  font-size: 23px;
+  font-size: 20px;
   cursor: pointer;
+  width: 100px;
+
+  
 }
 .navitem:hover {
   color: #05043f;
