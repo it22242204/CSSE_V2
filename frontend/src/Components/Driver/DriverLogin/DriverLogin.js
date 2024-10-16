@@ -1,86 +1,74 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import logimg from "./img/driver.jpg";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './DriverLogin.css';
 
-function DriverLogin() {
+const DriverLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');  // This is the phone number in the database
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-  const [driver, setDriver] = useState({
-    email: "",
-    phone: ""
-  });
 
-  const handleInputChange = (event) => {
-    setDriver({
-      ...driver,
-      [event.target.name]: event.target.value
-    });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  // Handle form submit
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/drive", {
-        gmail: driver.email,
-        phone: driver.phone
-      });
+      // Fetch all drivers from the database
+      const res = await axios.get('http://localhost:8080/drive');
+      const drivers = res.data.driv;
 
-      if (response.status === 200) {
-        alert('Driver login successful!');
-        navigate("/DriverDash"); // Redirect to driver dashboard or another page
+      // Find the driver with the entered email
+      const driver = drivers.find((drv) => drv.gmail === email);
+
+      if (!driver) {
+        setError('Driver not found');
+        return;
       }
-    } catch (error) {
-      console.error(error);
-      alert("Invalid credentials. Please try again.");
+
+      // Check if the entered password matches the driver's phone number
+      if (driver.phone !== password) {
+        setError('Incorrect password');
+        return;
+      }
+
+      // If email and password match, navigate to the driver dashboard
+      navigate('/DriverDash');  // or any other path you want to redirect to
+
+    } catch (err) {
+      setError('An error occurred during login');
+      console.error(err);
     }
   };
 
   return (
-    <div>
-      <div className="auth_box">
-        <div>
-          <h1 className="login-topic">Driver Login Here..!</h1>
-          <br />
-          <div className="user_tabl_towcolum">
-            <div className="left_colum_user">
-              <img src={logimg} alt="Driver Login" className="regi_img" />
-            </div>
-            <div className="riight_colum_user">
-              <form className="regi-form" onSubmit={handleSubmit}>
-                <label className="login-lable">Email</label>
-                <br />
-                <input
-                  type="email"
-                  className="login-input"
-                  value={driver.email}
-                  onChange={handleInputChange}
-                  name="email"
-                  required
-                />
-                <br />
-                <label className="login-lable">Password</label>
-                <br />
-                <input
-                  type="password"
-                  className="login-input"
-                  value={driver.phone}
-                  name="phone"
-                  onChange={handleInputChange}
-                  required
-                />
-                <br />
-                <button className="admin_form_cneter_btn" type="submit">
-                  Login
-                </button>
-                <br />
-              </form>
-            </div>
-          </div>
+    <div className="driver-login-container">
+      <h2>Driver Login</h2>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleLogin}>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
-      </div>
+        <div className="form-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
-}
+};
 
 export default DriverLogin;
