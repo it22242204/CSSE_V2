@@ -28,7 +28,7 @@ function DriverLogin() {
 
       if (response.status === 200) {
         alert('Driver login successful!');
-        navigate("/driver"); // Redirect to driver dashboard or another page
+        navigate("/DriverDash"); // Redirect to driver dashboard or another page
       }
     } catch (error) {
       console.error(error);

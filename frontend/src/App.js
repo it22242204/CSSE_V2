@@ -22,6 +22,7 @@ import AddRate from "./Components/User/RatingSystem/Add-Rates/AddRate";
 import RateDetails from "./Components/User/RatingSystem/Rate/RateDetails";
 import MyRate from "./Components/User/RatingSystem/MyRate/MyRate";
 import UpdateRate from "./Components/User/RatingSystem/UpdateRate/UpdateRate";
+import RegularCollection from "./Components/User/RegularCollectionManagement/RegularCollection"
 
 //Product Management ----------------------->
 //ADMIN
@@ -71,6 +72,12 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
+
+import DriverDliveryData from "./Components/Driver/DiliveryManagement/Dlivery/DliveryData/DliveryData";
+import DriverAccept from "./Components/Driver/DiliveryManagement/Dlivery/Accept/Accept";
+import DriversDetails from "./Components/Driver/DiliveryManagement/Driver/DriverDetails/DriverDetails";
+import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
+import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 
 function App() {
   return (
