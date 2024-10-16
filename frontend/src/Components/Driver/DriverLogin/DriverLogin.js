@@ -43,10 +43,10 @@ const DriverLogin = () => {
 
   return (
     <div className="driver-login-container">
-      <h2>Driver Login</h2>
-      {error && <p className="error">{error}</p>}
+      <h2 className='driver_h2'>Driver Login</h2>
+      {error && <p className="driver_error">{error}</p>}
       <form onSubmit={handleLogin}>
-        <div className="form-group">
+        <div className="driver_form-group">
           <label>Email:</label>
           <input
             type="email"
@@ -55,7 +55,7 @@ const DriverLogin = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="driver_form-group">
           <label>Password:</label>
           <input
             type="password"
@@ -65,7 +65,7 @@ const DriverLogin = () => {
             placeholder="Enter your password"
           />
         </div>
-        <button type="submit">Login</button>
+        <button className='driver_button' type="submit">Login</button>
       </form>
     </div>
   );

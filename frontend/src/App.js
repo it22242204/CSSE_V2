@@ -79,7 +79,7 @@ import DriversDetails from "./Components/Driver/DiliveryManagement/Driver/Driver
 import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
-
+import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
 function App() {
   return (
     <div>
@@ -123,6 +123,7 @@ function App() {
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
+          <Route path="/assigndriver" element={<AssignDriver/>}/>
           {/*Vehical*/}
           <Route path="/addvehical" element={<AddVehical />} />
           <Route path="/vehicaldetails" element={<VehicalDetails />} />

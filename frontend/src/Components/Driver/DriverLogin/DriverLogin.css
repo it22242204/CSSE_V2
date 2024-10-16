@@ -10,7 +10,7 @@
     text-align: center;
   }
   
-  h2 {
+  .driver_h2 {
     margin-bottom: 20px;
     font-size: 28px;
     color: #333;
@@ -21,17 +21,17 @@
     margin-bottom: 10px;
   }
   
-  .form-group {
+  .driver_form-group {
     margin-bottom: 15px;
     text-align: left;
   }
   
-  .form-group label {
+  .driver_form-group label {
     font-size: 16px;
     color: #555;
   }
   
-  .form-group input {
+  .driver_form-group input {
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -40,7 +40,7 @@
     box-sizing: border-box;
   }
   
-  button {
+  .driver_button {
     width: 100%;
     padding: 12px;
     background-color: #28a745;
@@ -52,7 +52,7 @@
     margin-top: 10px;
   }
   
-  button:hover {
+  .driver_button:hover {
     background-color: #218838;
   }
   
@@ -63,7 +63,7 @@
       padding: 15px;
     }
   
-    h2 {
+    .driver_h2 {
       font-size: 24px;
     }
   }
