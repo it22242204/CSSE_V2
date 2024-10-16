@@ -19,7 +19,7 @@ function AfterNav() {
             </h3>
             <h3
               className="navitem"
-              onClick={() => (window.location.href = "/viewall")}
+              onClick={() => (window.location.href = "/request")}
             >
               Request
             </h3>

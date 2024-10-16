@@ -71,6 +71,7 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
+import RegularCollection from "./Components/User/RegularCollectionManagement/RegularCollection";
 
 function App() {
   return (
@@ -94,6 +95,8 @@ function App() {
           <Route path="/login" element={<UserLogin />} />
           <Route path="/userprofile" element={<UserProfiel />} />
           <Route path="/updateaccount/:id" element={<UserUpdateAccount />} />
+          {/* Regular Collection  */}
+          <Route path="/request" element={<RegularCollection/>}/>
 
           {/* --------------- ADMIN Side ---------------*/}
           {/*Admin Home*/}
