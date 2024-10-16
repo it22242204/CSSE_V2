@@ -78,6 +78,7 @@ import DriverAccept from "./Components/Driver/DiliveryManagement/Dlivery/Accept/
 import DriversDetails from "./Components/Driver/DiliveryManagement/Driver/DriverDetails/DriverDetails";
 import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
+import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 
 function App() {
   return (
@@ -174,7 +175,7 @@ function App() {
           <Route path="/view-cart" element={<ViewCart />} />
           <Route path="/update-cart/:id" element={<EditCart />} />
           <Route path="/add-payment" element={<AddPayment />} />
-
+          <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
         </Routes>

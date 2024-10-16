@@ -1,6 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import Logo from "./img/recycle.png";
+
 const Sidebar = ({ children }) => {
   return (
     <div>
@@ -37,7 +38,7 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/admin-allproducts")}
+                onClick={() => (window.location.href = "/requesthandling")}
               >
                Request Handling
               </p>
