@@ -70,6 +70,12 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
+//Driver & User Functions ----------------------->
+import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
+import DriverDliveryData from "./Components/Driver/DiliveryManagement/Dlivery/DliveryData/DliveryData";
+import DriverAccept from "./Components/Driver/DiliveryManagement/Dlivery/Accept/Accept";
+import DriversDetails from "./Components/Driver/DiliveryManagement/Driver/DriverDetails/DriverDetails";
+import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 
 function App() {
   return (
@@ -104,6 +110,11 @@ function App() {
           <Route path="/delivrydata" element={<DliveryData />} />
           <Route path="/accept/:id" element={<Accept />} />
           {/*Driver*/}
+          <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
+          <Route path="/driveraccept/:id" element={<DriverAccept />} />
+          <Route path="/DriverDash" element={<DriverDash />} />
+          <Route path="/DriversDetails" element={<DriversDetails />} />
+          <Route path="/Notifications" element={<Notifications />} />
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
