@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 //ADMIN
 import DliveryData from "./Components/Admin/DiliveryManagement/Dlivery/DliveryData/DliveryData";
 //--Driver
+import DriverLogin from "./Components/Driver/DriverLogin/DriverLogin";
 import AddDriver from "./Components/Admin/DiliveryManagement/Driver/AddDriver/AddDriver";
 import DriverDetails from "./Components/Admin/DiliveryManagement/Driver/DriverDetails/DriverDetails";
 import UpdateDriver from "./Components/Admin/DiliveryManagement/Driver/UpdateDriver/UpdateDriver";
@@ -70,12 +71,6 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
-//Driver & User Functions ----------------------->
-import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
-import DriverDliveryData from "./Components/Driver/DiliveryManagement/Dlivery/DliveryData/DliveryData";
-import DriverAccept from "./Components/Driver/DiliveryManagement/Dlivery/Accept/Accept";
-import DriversDetails from "./Components/Driver/DiliveryManagement/Driver/DriverDetails/DriverDetails";
-import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 
 function App() {
   return (
@@ -99,10 +94,12 @@ function App() {
           <Route path="/login" element={<UserLogin />} />
           <Route path="/userprofile" element={<UserProfiel />} />
           <Route path="/updateaccount/:id" element={<UserUpdateAccount />} />
+          {/* Regular Collection  */}
+          <Route path="/request" element={<RegularCollection/>}/>
 
           {/* --------------- ADMIN Side ---------------*/}
           {/*Admin Home*/}
-          <Route exact path="/admin/login" element={<AdminLogin />} />
+          <Route exact path="/adminlogin" element={<AdminLogin />} />
           {/*Admin Home*/}
           <Route exact path="/admin" element={<AdminDash />} />
           {/*Dilivery Management*/}
@@ -170,6 +167,9 @@ function App() {
           <Route path="/view-cart" element={<ViewCart />} />
           <Route path="/update-cart/:id" element={<EditCart />} />
           <Route path="/add-payment" element={<AddPayment />} />
+
+          {/* Driver Panel */}
+          <Route path="/driverlogin" element={<DriverLogin />} />
         </Routes>
       </React.Fragment>
     </div>

@@ -17,16 +17,17 @@ function BeforNav() {
           <h3 className="navitem" onClick={notcompleate}>Contact Us</h3>
           <button
             className="nav_btn_log"
-            onClick={() => (window.location.href = "/login")}
+            onClick={() => (window.location.href = "/adminlogin")}
           >
-            Login
+            Admin
           </button>
           <button
             className="nav_btn_regi"
-            onClick={() => (window.location.href = "/userregister")}
+            onClick={() => (window.location.href = "/driverlogin")}
           >
-            Register
+            Driver
           </button>
+
         </div>
       </div>
     </div>

@@ -20,6 +20,7 @@ const UserProfileRoute = require("./Routes/UserProfileRoute.js");
 const DeliveryRoute = require("./Routes/DeliveryRoute.js");
 const InformRoute = require("./Routes/informSupplyRoute.js");
 const PaymentRoute = require("./Routes/PaymentRoute.js");
+const RegularCollectionRoute = require("./Routes/RegularCollectionRoutes.js");
 
 dotenv.config();
 connectDB();
@@ -41,6 +42,7 @@ app.use("/profile", UserProfileRoute);
 app.use("/deliveri", DeliveryRoute);
 app.use("/payments", PaymentRoute);
 app.use("/inform", InformRoute);
+app.use("/regularcollection", RegularCollectionRoute);
 
 const PORT = process.env.PORT || 8080;
 

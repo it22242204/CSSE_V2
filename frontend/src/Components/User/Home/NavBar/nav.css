@@ -41,6 +41,8 @@
   font-weight: bold;
   text-transform: capitalize;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 100px;
+  height: 50px;
 }
 .nav_btn_regi {
   color: #05043f;
@@ -54,14 +56,24 @@
   font-weight: bold;
   text-transform: capitalize;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 100px;
+  height: 50px;
 }
 .navitem {
   font-size: 20px;
   cursor: pointer;
   width: 100px;
-
+  display: flex;
   
 }
 .navitem:hover {
   color: #05043f;
+}
+
+.btngroup{
+  display: flex;
+  gap:20px;
+  margin: right;
+  margin-top: -1000px;
+  margin-left: 90px;
 }
