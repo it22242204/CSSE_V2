@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Stock.css";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
 const Product = ({ product }) => {
   const { _id, name, image, location, price, code } = product;
 
@@ -53,6 +55,7 @@ const Products = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

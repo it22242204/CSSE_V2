@@ -5,6 +5,8 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import "./AddRate.css";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
 function AddRate() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
@@ -148,6 +150,7 @@ function AddRate() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

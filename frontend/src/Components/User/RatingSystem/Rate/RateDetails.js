@@ -5,7 +5,11 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { FaRegUserCircle } from "react-icons/fa";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
+
 const URL = "http://localhost:8080/rates";
+
 
 const RateDetails = () => {
   const [rates, setRates] = useState([]);
@@ -117,6 +121,7 @@ const RateDetails = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

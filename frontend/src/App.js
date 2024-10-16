@@ -132,10 +132,7 @@ function App() {
           <Route exact path="/admin-allproducts" element={<AllProducts />} />
           <Route exact path="/update/:id" element={<UpdateProducts />} />
           <Route exact path="/viewall" element={<ViewAllProducts />} />
-          <Route
-            exact
-            path="/viewoneproduct/:id"
-            element={<ViewOneProduct />}
+          <Route exact path="/viewoneproduct/:id" element={<ViewOneProduct />}
           />
           {/*User Management*/}
           <Route path="/userdetails" element={<UserDetails />} />

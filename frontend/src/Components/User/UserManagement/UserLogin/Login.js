@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../User.css";
 import logimg from "../img/log.jpg";
+import Footer from "../../../Footer/Footer";
 function Login() {
   const history = useNavigate();
   const [user, setUser] = useState({
@@ -96,6 +97,7 @@ function Login() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

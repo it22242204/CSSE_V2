@@ -1,0 +1,86 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 7%;
+    background-color: #037148;
+    height: 100px;
+  }
+  
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 13%;
+  }
+  
+  /* Logo Styling */
+  .navbar__logo {
+    margin-left: -190px;
+    width: 70px;
+  }
+  
+  /* Navbar Items */
+  .navbar__items {
+    margin-left: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .navbar__item {
+    font-size: 22px;
+    cursor: pointer;
+    width: 150px;
+    display: flex;
+  }
+  
+  .navbar__item:hover {
+    color: #37ff80;
+  }
+  
+  /* Shopping Cart Icon */
+  .navbar__cart-icon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .navbar__cart-icon:hover {
+    color: #05043f;
+  }
+  
+  /* Profile Button */
+  .navbar__profile-btn {
+    background-color: #035c1a;
+    color: white;
+    border: 2px solid #035c1a;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 50px;
+  }
+  
+  /* Button Group (if needed) */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+  }
+  
+  .button-group__welcome-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  

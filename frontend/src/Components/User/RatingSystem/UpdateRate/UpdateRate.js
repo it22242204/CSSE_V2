@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { useNavigate } from "react-router";
 import Rating from "@mui/material/Rating";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
 
 function UpdateRate() {
   const [inputs, setInputs] = useState({});
@@ -135,7 +136,9 @@ function UpdateRate() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
+    
   );
 }
 

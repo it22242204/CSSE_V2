@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from "../../../Footer/Footer";
 
 function MyOrder() {
   const [delivery, setDlivery] = useState([]);
@@ -84,6 +85,7 @@ function MyOrder() {
           ))}
         </table>
       </div>
+      <Footer/>
     </div>
   );
 }
