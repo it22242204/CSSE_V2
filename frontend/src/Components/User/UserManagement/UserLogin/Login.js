@@ -22,7 +22,7 @@ function Login() {
         // If token exists in the response
         localStorage.setItem("token", response.token); // Store token in localStorage
         alert("Login Success..!");
-        window.location.href = "/userprofile";
+        window.location.href = "/afetrhome";
       } else {
         alert("Please enter valid Gmail & Password..!");
       }
