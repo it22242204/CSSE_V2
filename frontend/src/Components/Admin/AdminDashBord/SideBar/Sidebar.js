@@ -44,9 +44,9 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/supplierdetails")}
+                onClick={() => (window.location.href = "/admin-allproducts")}
               >
-                Recycle
+               Products
               </p>
               <p
                 className="nav_item"

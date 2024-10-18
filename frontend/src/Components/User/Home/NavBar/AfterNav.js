@@ -1,52 +1,53 @@
 import React from "react";
 import Logo from "../img/recycle-log.png";
-import "./nav.css";
+import "./navbarStyles.css";
 import { FaShoppingCart } from "react-icons/fa";
+
 function AfterNav() {
   return (
     <div>
-      <div className="nav_bar">
-        <div className="nav_con_user">
+      <div className="navbar">
+        <div className="navbar__container">
           <div>
-            <img src={Logo} alt="logo_nav" className="nav_logo_user" />
+            <img src={Logo} alt="logo" className="navbar__logo" />
           </div>
-          <div className="nav_item_user">
+          <div className="navbar__items">
             <h3
-              className="navitem"
+              className="navbar__item"
               onClick={() => (window.location.href = "/afetrhome")}
             >
               Home
             </h3>
             <h3
-              className="navitem"
+              className="navbar__item"
               onClick={() => (window.location.href = "/request")}
             >
               Request
             </h3>
             <h3
-              className="navitem"
-              onClick={() => (window.location.href = "/ratedetails")}
+              className="navbar__item"
+              onClick={() => (window.location.href = "/addspecialorder")}
             >
               Special Collection
             </h3>
             <h3
-              className="navitem"
+              className="navbar__item"
               onClick={() => (window.location.href = "/viewall")}
             >
-              Recycle Product
+              Recycle Products
             </h3>
             <h3
-              className="navitem"
+              className="navbar__item"
               onClick={() => (window.location.href = "/waste")}
             >
-              Recycle Service
+              Recycle Services
             </h3>
             <FaShoppingCart
-              className="cart_icon"
+              className="navbar__cart-icon"
               onClick={() => (window.location.href = "/view-cart")}
             />
             <button
-              className="nav_btn_log"
+              className="navbar__profile-btn"
               onClick={() => (window.location.href = "/userprofile")}
             >
               Profile

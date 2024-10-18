@@ -47,8 +47,8 @@ import UserUpdateAccount from "./Components/User/UserManagement/UpdateAccount/Up
 import AddToCart from "./Components/User/ShoppingCart/Cart/AddtoCart";
 import ViewCart from "./Components/User/ShoppingCart/Cart/Carts";
 import EditCart from "./Components/User/ShoppingCart/Cart/EditCartItem";
-import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
-
+// import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
+//arshad commanted 5oth line
 //Supplier Manegment ----------------------->
 //ADMIN
 import AddSupplier from "./Components/Admin/SupplierManegment/AddSupplier/AddSupplier";
@@ -80,6 +80,15 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
+
+//special collection requests User
+import Addorder from './Components/User/Specialorder/Addorder/Addorder';
+import Orderdetails from './Components/User/Specialorder/Orderdetails/Orders';
+import Updateorder from './Components/User/Specialorder/Updateorder/Updateorder';
+import AddPayment from './Components/User/Specialorder/PaymentProcess/AddPayment';
+import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymentsuccessful';
+
+
 
 //Recycle Service - User
 import Wasteform from './Components/User/RecycleService/Wasteform';
@@ -142,10 +151,7 @@ function App() {
           <Route exact path="/admin-allproducts" element={<AllProducts />} />
           <Route exact path="/update/:id" element={<UpdateProducts />} />
           <Route exact path="/viewall" element={<ViewAllProducts />} />
-          <Route
-            exact
-            path="/viewoneproduct/:id"
-            element={<ViewOneProduct />}
+          <Route exact path="/viewoneproduct/:id" element={<ViewOneProduct />}
           />
           {/*User Management*/}
           <Route path="/userdetails" element={<UserDetails />} />
@@ -188,14 +194,6 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
-
-          {/* Recycle Service User */}
-          <Route path="/waste" element={<Wasteform />} />
-          <Route path="/summary" element={<Summarypage />} />
-          <Route path="/bill" element={<BillPage />} />
-
-          {/* Recycle Service Admin */}
-          <Route path="/adminr" element={<Adminpanel />} />
         </Routes>
       </React.Fragment>
     </div>

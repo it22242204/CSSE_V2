@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../User.css";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from "../../../Footer/Footer";
 function UpdateAccount() {
   const [user, setUser] = useState({
     name: "",
@@ -110,6 +111,7 @@ function UpdateAccount() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

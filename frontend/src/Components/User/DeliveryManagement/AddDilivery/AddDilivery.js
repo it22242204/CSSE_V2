@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from "../../../Footer/Footer";
 function AddDilivery() {
   const navigate = useNavigate(); // Changed variable name to navigate
   const [inputs, setInputs] = useState({
@@ -102,6 +103,7 @@ function AddDilivery() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

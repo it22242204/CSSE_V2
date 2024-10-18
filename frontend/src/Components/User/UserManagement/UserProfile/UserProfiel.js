@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../User.css";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
 function UserProfile() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -90,6 +92,7 @@ function UserProfile() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

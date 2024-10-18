@@ -5,6 +5,8 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { Link } from "react-router-dom";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
 function MyRate() {
   const [rates, setRate] = useState([]);
   const [email, setGmail] = useState("");
@@ -119,6 +121,7 @@ function MyRate() {
           ))}
         </table>
       </div>
+      <Footer/>
     </div>
   );
 }

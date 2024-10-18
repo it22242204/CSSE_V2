@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../User.css";
 import regiimg from "../img/reg.avif";
+import Footer from '../../../Footer/Footer';
+
 function Register() {
   const [user, setUser] = useState({
     name: "",

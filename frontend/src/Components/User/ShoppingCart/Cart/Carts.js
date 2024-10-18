@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import AddPayment from "../Payment/AddPayment";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from '../../../Footer/Footer';
+
 const Carts = () => {
   const [carts, setCarts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -91,9 +93,9 @@ const Carts = () => {
                       </div>
                       <div className="disdatabx2">
                         <h3 className="itmnme">{cart.name}</h3>
-                        <p className="itmdetails">Price: ${cart.price}</p>
+                        <p className="itmdetails">Price: Rs.{cart.price}</p>
                         <p className="itmdetails">Quantity: {cart.qty}</p>
-                        <p className="itmdetails">Total: ${cart.total}</p>
+                        <p className="itmdetails">Total: Rs.{cart.total}</p>
                       </div>
                       <div className="disdatabx3">
                         <button
@@ -127,6 +129,7 @@ const Carts = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

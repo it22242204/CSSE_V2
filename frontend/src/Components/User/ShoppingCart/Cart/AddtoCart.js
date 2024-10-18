@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from "../../../Footer/Footer";
+
+
 const AddToCart = () => {
   const history = useNavigate();
   const location = useLocation();
@@ -121,6 +124,7 @@ const AddToCart = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

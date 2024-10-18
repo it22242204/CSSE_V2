@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import AfterNav from "../../Home/NavBar/AfterNav";
+import Footer from "../../../Footer/Footer";
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const ProductDetails = () => {
           <h3 className="itm_name_view">{name}</h3>
           <img src={image} alt={name} className="view_iten_img" />
           <p className="itmname">Location: {location}</p>
-          <p className="itmname">Price: ${price}</p>
+          <p className="itmname">Price: Rs.{price}</p>
           <p className="itmname">Code: {code}</p>
           <button className="cart_cneter_btn" onClick={handleAddToCart}>Add to Cart</button>
           <button
@@ -67,6 +68,7 @@ const ProductDetails = () => {
           {cartMessage && <div>{cartMessage}</div>}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
