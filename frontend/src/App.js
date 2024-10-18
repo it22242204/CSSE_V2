@@ -194,6 +194,12 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+          {/* RecycleService - user */}
+          <Route path="/waste" element={<Wasteform/>}/>
+          <Route path="/summary" element={<Summarypage/>}/>
+          <Route path="/bill" element={<BillPage/>}/>
+          {/* RecycleService - admin */}
+          <Route path="/adminr" element={<Adminpanel/>}/>
         </Routes>
       </React.Fragment>
     </div>

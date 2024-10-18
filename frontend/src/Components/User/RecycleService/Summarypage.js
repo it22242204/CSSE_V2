@@ -61,10 +61,7 @@ const SummaryPage = () => {
       subtotal,
       address: useraddress,
       paymentMethod,
-      cardDetails:
-        paymentMethod === 'Card'
-          ? [{ accountname, bankname, accountnumber }]
-          : null,
+      cardDetails: paymentMethod === 'Card' ? [{ accountname, bankname, accountnumber }] : null,
     };
 
     try {
