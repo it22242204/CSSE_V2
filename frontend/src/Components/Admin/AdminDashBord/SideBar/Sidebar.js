@@ -50,9 +50,15 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
+<<<<<<< HEAD
                 onClick={() => (window.location.href = "/eticketadmin")}
               >
                Etickets
+=======
+                onClick={() => (window.location.href = "/adminr")}
+              >
+                Recycle Service
+>>>>>>> 147a2519bb4a0722c00dc5506df355aed7ea4b2f
               </p>
               <p
                 className="nav_item"

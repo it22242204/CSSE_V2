@@ -47,8 +47,8 @@ import UserUpdateAccount from "./Components/User/UserManagement/UpdateAccount/Up
 import AddToCart from "./Components/User/ShoppingCart/Cart/AddtoCart";
 import ViewCart from "./Components/User/ShoppingCart/Cart/Carts";
 import EditCart from "./Components/User/ShoppingCart/Cart/EditCartItem";
-import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
-
+// import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
+//arshad commanted 5oth line
 //Supplier Manegment ----------------------->
 //ADMIN
 import AddSupplier from "./Components/Admin/SupplierManegment/AddSupplier/AddSupplier";
@@ -84,8 +84,6 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
-
-
 function App() {
   return (
     <div>
@@ -186,6 +184,12 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+          {/* RecycleService - user */}
+          <Route path="/waste" element={<Wasteform/>}/>
+          <Route path="/summary" element={<Summarypage/>}/>
+          <Route path="/bill" element={<BillPage/>}/>
+          {/* RecycleService - admin */}
+          <Route path="/adminr" element={<Adminpanel/>}/>
         </Routes>
       </React.Fragment>
     </div>

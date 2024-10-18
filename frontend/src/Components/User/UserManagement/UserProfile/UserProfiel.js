@@ -20,6 +20,8 @@ function UserProfile() {
         });
         if (response.data.status === "ok") {
           setUser(response.data.user); // Update user state with received user data
+          localStorage.setItem("userEmail", response.data.user.email); // Store email in localStorage
+          localStorage.setItem("userAddress", response.data.user.address); // Store address in localStorage
         } else {
           console.error("Error retrieving user details:", response.data.data);
         }

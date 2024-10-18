@@ -26,7 +26,7 @@ function AfterNav() {
             </h3>
             <h3
               className="navbar__item"
-              onClick={() => (window.location.href = "/ratedetails")}
+              onClick={() => (window.location.href = "/addspecialorder")}
             >
               Special Collection
             </h3>
@@ -38,7 +38,7 @@ function AfterNav() {
             </h3>
             <h3
               className="navbar__item"
-              onClick={() => (window.location.href = "/ratedetails")}
+              onClick={() => (window.location.href = "/waste")}
             >
               Recycle Services
             </h3>

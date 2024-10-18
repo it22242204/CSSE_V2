@@ -1,0 +1,67 @@
+.bill-container {
+    max-width: 600px; /* Limit the width of the bill */
+    margin: 20px auto; /* Center the bill on the page */
+    padding: 20px;
+    border: 1px solid #ddd; /* Light border around the bill */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background */
+    font-family: 'Arial', sans-serif; /* Font family */
+  }
+  
+  .bill-header {
+    text-align: center; /* Center the header */
+    font-size: 24px; /* Font size for header */
+    margin-bottom: 20px; /* Space below header */
+  }
+  
+  h2, h3 {
+    margin: 10px 0; /* Margins for h2 and h3 elements */
+    color: #333; /* Dark color for headings */
+  }
+  
+  table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+    margin-bottom: 20px; /* Space below the table */
+  }
+  
+  th, td {
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Light border below each row */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Light gray background for header */
+    font-weight: bold; /* Bold text for headers */
+  }
+  
+  .subtotal {
+    font-weight: bold; /* Bold text for subtotal */
+    font-size: 18px; /* Larger font size for subtotal */
+  }
+  
+  .card-details {
+    margin-top: 10px; /* Space above card details */
+    border: 1px solid #ddd; /* Light border around card details */
+    padding: 10px; /* Padding inside card details */
+    border-radius: 5px; /* Rounded corners for card details */
+  }
+  
+  .ok-button {
+    display: block; /* Make the button a block element */
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for button */
+  }
+  
+  .ok-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
