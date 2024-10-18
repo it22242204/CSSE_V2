@@ -47,8 +47,8 @@ import UserUpdateAccount from "./Components/User/UserManagement/UpdateAccount/Up
 import AddToCart from "./Components/User/ShoppingCart/Cart/AddtoCart";
 import ViewCart from "./Components/User/ShoppingCart/Cart/Carts";
 import EditCart from "./Components/User/ShoppingCart/Cart/EditCartItem";
-import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
-
+// import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
+//arshad commanted 5oth line
 //Supplier Manegment ----------------------->
 //ADMIN
 import AddSupplier from "./Components/Admin/SupplierManegment/AddSupplier/AddSupplier";
@@ -80,6 +80,15 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
+
+//special collection requests User
+import Addorder from './Components/User/Specialorder/Addorder/Addorder';
+import Orderdetails from './Components/User/Specialorder/Orderdetails/Orders';
+import Updateorder from './Components/User/Specialorder/Updateorder/Updateorder';
+import AddPayment from './Components/User/Specialorder/PaymentProcess/AddPayment';
+import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymentsuccessful';
+
+
 function App() {
   return (
     <div>
@@ -176,6 +185,13 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+
+          {/* special collection request user */}
+          <Route path="/addspecialorder" element={<Addorder/>}/>
+          <Route path="/specialorderdetails" element={<Orderdetails/>} />
+          <Route path="/specialorderdetails/:id" element={<Updateorder/>}/>
+          <Route path="/specialpayment" element={<AddPayment/>}/>
+          <Route path="/specialpaymentsuc" element={<PaymentSuccess/>}/>
         </Routes>
       </React.Fragment>
     </div>

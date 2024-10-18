@@ -1,14 +1,16 @@
 import React,{useState,useEffect,useRef} from 'react';
-import Nav from "../Nav/Nav";
+// import Nav from "../Nav/Nav";
 import axios from "axios";
 import Order from "../Order/Order";
 import {useReactToPrint} from "react-to-print";
 import './Orders.css';
+import AfterNav from '../../Home/NavBar/AfterNav';
+import Footer from '../../../Footer/Footer';
 // import bgimg from "./bg3.jpeg";
 // import Notepic from "./notepic.jpg";
 // import Notepic2 from "./notepic2.jpg";
 
-const URL="http://localhost:5000/orders";
+const URL="http://localhost:8080/orders";
 
 const fetchHandler=async()=>{
   return await axios.get(URL).then((res) => res.data);
@@ -26,7 +28,7 @@ function Orders() {
 
  //implementing the downloading report function
  const componentRef=useRef(null);
- const handleprint=useReactToPrint({contentRef: componentRef,
+ const handleprint=useReactToPrint({content:()=>componentRef.current,
   documentTitle:"Order Report",
   onAfterPrint:()=>alert("Order Report Succcessfully Download!"),
  }
@@ -64,7 +66,7 @@ function Orders() {
 
   return (
     <div>
-      <Nav/>
+      <AfterNav/>
       <div>
        {/* <div className="bgimg"
       style={{ backgroundImage: `url(${bgimg})`, backgroundSize: "cover" ,position:"sticky",WebkitPosition:"sticky", 
@@ -113,6 +115,7 @@ function Orders() {
         }}>Download Report</button>
         </div> 
     </div>
+    <Footer/>
     </div>
     
   )

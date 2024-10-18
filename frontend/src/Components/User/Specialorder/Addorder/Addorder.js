@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Nav from '../Nav/Nav';
+// import Nav from '../Nav/Nav';
 import './Addorder.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 // import bgImage from "./bg2.jpeg";
+import AfterNav from '../../Home/NavBar/AfterNav';
+import Footer from '../../../Footer/Footer';
 import Bin from './bin.png';
 
 function Addorder() {
@@ -67,7 +69,7 @@ function Addorder() {
 
   //implementing the sendrequest function from above
   const sendRequest = async () => {
-    await axios.post("http://localhost:5000/orders", {
+    await axios.post("http://localhost:8080/orders", {
       //module attribute name=name
       contactname: String(inputs.contactname),
       typeofuser: String(inputs.typeofuser),
@@ -84,7 +86,7 @@ function Addorder() {
 
   return (
     <div>
-      <Nav />
+      <AfterNav/>
       <div className='' style={{ display: 'flex', gap: '30px' }}>
         <div className="bg"
           style={{
@@ -96,6 +98,7 @@ function Addorder() {
 
           <form onSubmit={handleSubmit} className='form'>
             <br></br><br /><br /><br />
+            <div className='cont2'>
             <h1>Schedule A Special Waste Collection</h1>
             <div className="mb-3">
               <label htmlFor="InputName" className="form-label">Contact Name</label>
@@ -142,12 +145,14 @@ function Addorder() {
               <button type="button" className="btn btn-secondary" onClick={() => history(-1)}>Cancel</button>
               <button type="submit" className="btn btn-success" style={{ marginLeft: '550px' }}>Pay</button>
             </div>
+            </div>
           </form>
         </div>
         <div className='bin'>
           <img src={Bin} alt="logo_nav" className="binimg" />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

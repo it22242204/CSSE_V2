@@ -10,7 +10,7 @@
     width: 900px;
     margin-left: 40px;
     background-color:#bdb9b9;
-    padding: 30px;
+    padding: 40px;
     /* margin-top: -660px; */
     margin-top: 20px;
 }
@@ -22,6 +22,18 @@
   margin-top: 30px;
   border-radius: 15px;
 } 
+
+.btngroup{
+  margin-top: 915px;
+  
+}
+/* h1{
+  margin-top: -40px;
+} */
+
+.cont2{
+  margin-top: -50px;
+}
 
 
 

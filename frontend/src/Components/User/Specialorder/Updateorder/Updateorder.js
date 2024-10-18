@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import Nav from '../Nav/Nav';
+import AfterNav from '../../Home/NavBar/AfterNav';
+import Footer from '../../../Footer/Footer';
+import './Updateorder.css';
 // import bgImage from "./update.jpeg";
 
 function Updateorder() {
@@ -13,7 +15,7 @@ function Updateorder() {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:5000/orders/${id}`)
+        .get(`http://localhost:8080/orders/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.order));
     };
@@ -27,7 +29,7 @@ function Updateorder() {
     const userconfirm=window.confirm("Are you sure you want to delete this order?")
     if(userconfirm){
      try{
-     await axios.delete(`http://localhost:5000/orders/${id}`)
+     await axios.delete(`http://localhost:8080/orders/${id}`)
      .then(res=>res.data)
      .then(()=>history("/"))
      .then(()=>history("/specialorderdetails"))
@@ -42,7 +44,7 @@ function Updateorder() {
   //implementing the sendrequest function
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:5000/orders/${id}`, {
+      .put(`http://localhost:8080/orders/${id}`, {
         //module attribute name= form input.name
          //module attribute name=name
       contactname:String(inputs.contactname),
@@ -96,7 +98,7 @@ function Updateorder() {
 
   return (
     <div>
-       <Nav/>
+       <AfterNav/>
        <div className="bg"
       style={{   backgroundColor: 'white',
         backgroundSize: 'cover',
@@ -106,6 +108,7 @@ function Updateorder() {
       
       <form onSubmit={handleSubmit} className='form'>
         <br></br><br/><br/><br/>
+        <div style={{marginTop:'-100px'}}>
       <h1>Shedule A special Waste Collection</h1>
       <div class="mb-3">
     <label for="InputName" class="form-label">Contact Name</label>
@@ -157,8 +160,11 @@ function Updateorder() {
   <button type="submit" class="btn btn-danger" onClick={deleteHandler}>Delete</button>
   <button type="submit" class="btn btn-success" style={{marginLeft:'550px'}}>Update</button>
   </div>
+  </div>
 </form>
+
 </div>
+
     </div>
   );
 }

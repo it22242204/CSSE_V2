@@ -13,7 +13,7 @@ function Order(props) {
     const userconfirm = window.confirm("Are you sure you want to delete this order?");
     if (userconfirm) {
       try {
-        await axios.delete(`http://localhost:5000/orders/${_id}`)
+        await axios.delete(`http://localhost:8080/orders/${_id}`)
           .then(res => res.data)
           .then(() => history("/"))
           .then(() => history("/specialorderdetails"));
