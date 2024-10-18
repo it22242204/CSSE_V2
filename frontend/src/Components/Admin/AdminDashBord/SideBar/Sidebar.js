@@ -50,6 +50,12 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
+                onClick={() => (window.location.href = "/eticketadmin")}
+              >
+               Etickets
+              </p>
+              <p
+                className="nav_item"
                 onClick={() => (window.location.href = "/userdetails")}
               >
                 User

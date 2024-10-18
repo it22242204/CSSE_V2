@@ -72,6 +72,10 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
+import Eticket from "./Pages/Eticket";
+import Eticketadmin from "./Pages/Admin"
+import Error from "./Pages/404"
+
 
 import DriverDliveryData from "./Components/Driver/DiliveryManagement/Dlivery/DliveryData/DliveryData";
 import DriverAccept from "./Components/Driver/DiliveryManagement/Dlivery/Accept/Accept";
@@ -80,6 +84,8 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
+
+
 function App() {
   return (
     <div>
@@ -88,6 +94,8 @@ function App() {
           {/* --------------- USER Side ---------------*/}
           <Route path="/afetrhome" element={<Home />} />
           <Route path="/" element={<BeforHome />} />
+          <Route path="/eticket" element={<Eticket />} />
+
           {/*Dilivery Management*/}
           <Route path="/adddlilivey" element={<AddDilivery />} />
           <Route path="/myorder" element={<MyOrder />} />
@@ -110,6 +118,8 @@ function App() {
           <Route exact path="/adminlogin" element={<AdminLogin />} />
           {/*Admin Home*/}
           <Route exact path="/admin" element={<AdminDash />} />
+          <Route exact path="/eticketadmin" element={<Eticketadmin/>} />
+          <Route exact path="/404" element={<Error/>}/>
           {/*Dilivery Management*/}
           {/*Dlivery */}
           <Route path="/delivrydata" element={<DliveryData />} />

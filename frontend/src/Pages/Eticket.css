@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* General styling for the table */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+thead th {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa; /* Light grey hover effect */
+}
+
+/* Buttons in Actions column */
+.table-actions .btn {
+  margin-right: 5px;
+}
+
+.table-actions .btn i {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Styling for search bar */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Button styling */
+button i {
+  margin-right: 5px;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  thead {
+    display: none; /* Hide the table headers */
+  }
+
+  tbody td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-top: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #007bff;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  tbody td:last-child {
+    border-bottom: 0;
+  }
+}
+
