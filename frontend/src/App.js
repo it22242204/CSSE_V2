@@ -80,6 +80,15 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
+
+//Recycle Service - User
+import Wasteform from './Components/User/RecycleService/Wasteform';
+import Summarypage from './Components/User/RecycleService/Summarypage';
+import BillPage from './Components/User/RecycleService/BillPage';
+
+//Recycle service - admin
+import Adminpanel from './Components/Admin/RecycleService/Adminpanel';
+
 function App() {
   return (
     <div>
@@ -179,6 +188,14 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+
+          {/* Recycle Service User */}
+          <Route path="/waste" element={<Wasteform />} />
+          <Route path="/summary" element={<Summarypage />} />
+          <Route path="/bill" element={<BillPage />} />
+
+          {/* Recycle Service Admin */}
+          <Route path="/adminr" element={<Adminpanel />} />
         </Routes>
       </React.Fragment>
     </div>

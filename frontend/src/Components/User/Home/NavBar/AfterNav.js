@@ -37,7 +37,7 @@ function AfterNav() {
             </h3>
             <h3
               className="navitem"
-              onClick={() => (window.location.href = "/ratedetails")}
+              onClick={() => (window.location.href = "/waste")}
             >
               Recycle Service
             </h3>

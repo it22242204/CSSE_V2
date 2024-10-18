@@ -21,6 +21,7 @@ const DeliveryRoute = require("./Routes/DeliveryRoute.js");
 const InformRoute = require("./Routes/informSupplyRoute.js");
 const PaymentRoute = require("./Routes/PaymentRoute.js");
 const RegularCollectionRoute = require("./Routes/RegularCollectionRoutes.js");
+const paymentRoutes = require('./Routes/priceRoutes.js');
 
 dotenv.config();
 connectDB();
@@ -43,6 +44,7 @@ app.use("/deliveri", DeliveryRoute);
 app.use("/payments", PaymentRoute);
 app.use("/inform", InformRoute);
 app.use("/regularcollection", RegularCollectionRoute);
+app.use('/api/payment', paymentRoutes);
 
 const PORT = process.env.PORT || 8080;
 
