@@ -1,0 +1,28 @@
+/* Home.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .bgimg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjust 60px to the height of your navbar */
+    margin-top: -20px; /* Adjust this value to match the height of your navbar */
+    overflow: hidden;
+  }
+  
+  .imgbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the image is behind other elements */
+  }
+  

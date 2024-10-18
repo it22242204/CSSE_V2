@@ -1,0 +1,27 @@
+.bg{
+    position: relative;
+    align-items: center;
+}
+
+.form{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    margin-left: 40px;
+    background-color:#bdb9b9;
+    padding: 30px;
+    /* margin-top: -660px; */
+    margin-top: 20px;
+}
+
+.binimg{
+  width: 450px;
+  /* margin:right; */
+  /* margin-bottom: 3000px; */
+  margin-top: 30px;
+  border-radius: 15px;
+} 
+
+
+
