@@ -8,8 +8,8 @@ import Sidebar from "../DriverDashBord/SideBar/Sidebar";
 
 const URL = "http://localhost:8080/orders";
 
-const fetchOrders = async () => {
-  return await axios.get(URL).then((res) => res.data);
+const fetchOrders = async (status) => {
+  return await axios.get(URL).then((res) => res.data.Orders.filter(order => order.status === status));
 };
 
 function Notifications() {
@@ -19,8 +19,7 @@ function Notifications() {
 
   // Fetch only accepted orders
   useEffect(() => {
-    fetchOrders().then((data) => {
-      const acceptedOrders = data.Orders.filter(order => order.status === "Accepted" );
+    fetchOrders("Accepted").then((acceptedOrders) => {
       setOrders(acceptedOrders);
     });
   }, []);
@@ -37,8 +36,7 @@ function Notifications() {
       try {
         await axios.put(`${URL}/updateStatus/${_id}`, { status: "Denied" });
         window.alert("Order denied successfully!");
-        fetchOrders().then((data) => {
-          const acceptedOrders = data.Orders.filter(order => order.status === "Pending" );
+        fetchOrders("Accepted").then((acceptedOrders) => {
           setOrders(acceptedOrders);
         });
       } catch (error) {
@@ -52,8 +50,7 @@ function Notifications() {
     try {
       await axios.put(`${URL}/updateStatus/${_id}`, { status: "Driver Accepted" });
       window.alert("Order accepted by driver successfully!");
-      fetchOrders().then((data) => {
-        const acceptedOrders = data.Orders.filter(order => order.status === "Pending" );
+      fetchOrders("Accepted").then((acceptedOrders) => {
         setOrders(acceptedOrders);
       });
     } catch (error) {
@@ -63,16 +60,15 @@ function Notifications() {
 
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
-    contentRef: componentRef,
+    content:()=>componentRef.current,
     documentTitle: "Order Report",
     onAfterPrint: () => alert("Order Report Successfully Downloaded!"),
   });
 
   const handleSearch = () => {
-    fetchOrders().then((data) => {
-      const filtered = data.Orders.filter((order) =>
-        order.contactname.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (order.status === "Accepted" || order.status === "Driver Accepted")
+    fetchOrders("Accepted").then((acceptedOrders) => {
+      const filtered = acceptedOrders.filter((order) =>
+        order.contactname.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setOrders(filtered);
       setNoResults(filtered.length === 0);
@@ -85,12 +81,12 @@ function Notifications() {
       <Sidebar/>
       <div className="children_div_admin">
         <div className="dash_button_set">
-          <button
+          {/* <button
             className="btn_dash_admin"
             onClick={() => (window.location.href = "/adddriver")}
           >
             Add New Driver
-          </button>
+          </button> */}
 
           <table>
             <tbody>
@@ -112,7 +108,6 @@ function Notifications() {
               </tr>
             </tbody>
           </table>
-          
           <button className="btn_dash_admin" onClick={handlePrint}>
             Generate Report
           </button>
@@ -121,7 +116,7 @@ function Notifications() {
         <div className="tbl_con_admin" ref={componentRef}>
           <h1 className="topic_inventory">
             Special Collection
-            <span className="sub_topic_inventory"> Driver Notifications</span>{" "}
+            <span className="sub_topic_inventory"> Notifications</span>{" "}
           </h1>
           <table className="table_details_admin">
             <thead>
@@ -142,7 +137,7 @@ function Notifications() {
               <div>
                 <br />
                 <h1 className="con_topic">
-                  No <span className="clo_us">Orders Found</span>{" "}
+                  No <span className="clo_us">Orders</span> Found
                 </h1>
               </div>
             ) : (

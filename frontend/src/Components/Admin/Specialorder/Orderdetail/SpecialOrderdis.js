@@ -8,8 +8,8 @@ import Sidebar from "../../AdminDashBord/SideBar/Sidebar";
 
 const URL = "http://localhost:8080/orders";
 
-const fetchOrders = async () => {
-  return await axios.get(URL).then((res) => res.data);
+const fetchOrders = async (status) => {
+  return await axios.get(URL).then((res) => res.data.Orders.filter(order => order.status === status));
 };
 
 function SpecialOrderdis() {
@@ -18,8 +18,7 @@ function SpecialOrderdis() {
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
-    fetchOrders().then((data) => {
-      const pendingOrders = data.Orders.filter(order => order.status === "Pending");
+    fetchOrders("Pending").then((pendingOrders) => {
       setOrders(pendingOrders);
     });
   }, []);
@@ -29,10 +28,9 @@ function SpecialOrderdis() {
   const updateOrderStatus = async (_id, newStatus) => {
     try {
       await axios.put(`${URL}/updateStatus/${_id}`, { status: newStatus });
-      
+
       window.alert(`Order ${newStatus.toLowerCase()} successfully!`);
-      fetchOrders().then((data) => {
-        const pendingOrders = data.Orders.filter(order => order.status === "Pending");
+      fetchOrders("Pending").then((pendingOrders) => {
         setOrders(pendingOrders);
       });
     } catch (error) {
@@ -41,8 +39,8 @@ function SpecialOrderdis() {
   };
 
   const handleSearch = () => {
-    fetchOrders().then((data) => {
-      const filtered = data.Orders.filter((order) =>
+    fetchOrders("Pending").then((pendingOrders) => {
+      const filtered = pendingOrders.filter((order) =>
         order.contactname.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setOrders(filtered);
@@ -52,7 +50,7 @@ function SpecialOrderdis() {
 
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
-    contentRef: componentRef,
+    content:()=>componentRef.current,
     documentTitle: "Order Report",
     onAfterPrint: () => alert("Order Report Successfully Downloaded!"),
   });
@@ -63,12 +61,12 @@ function SpecialOrderdis() {
       <Sidebar/>
       <div className="children_div_admin">
         <div className="dash_button_set">
-          <button
+          {/* <button
             className="btn_dash_admin"
             onClick={() => (window.location.href = "/adddriver")}
           >
             Add New Driver
-          </button>
+          </button> */}
 
           <tr>
             <td>
