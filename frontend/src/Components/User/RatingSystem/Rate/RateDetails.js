@@ -8,7 +8,7 @@ import AfterNav from "../../Home/NavBar/AfterNav";
 import Footer from '../../../Footer/Footer';
 
 
-const URL = "http://localhost:8080/rates";
+const URL = "http://localhost:8081/rates";
 
 
 const RateDetails = () => {

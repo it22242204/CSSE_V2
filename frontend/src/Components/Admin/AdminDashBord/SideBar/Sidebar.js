@@ -32,13 +32,19 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
+                onClick={() => (window.location.href = "/registeruserpaymentdetails")}
+              >
+                Registrations
+              </p>
+              <p
+                className="nav_item"
                 onClick={() => (window.location.href = "/inventoryitemdetails")}
               >
                 Special Collection
               </p>
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/requesthandling")}
+                onClick={() => (window.location.href = "/request")}
               >
                Request Handling
               </p>
@@ -67,6 +73,7 @@ const Sidebar = ({ children }) => {
               >
                 User
               </p>
+             
             </div>
           </div>
         </div>

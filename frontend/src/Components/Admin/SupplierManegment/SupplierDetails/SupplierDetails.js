@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import Sidebar from "../../AdminDashBord/SideBar/Sidebar";
 
-const URL = "http://localhost:8080/supplier";
+const URL = "http://localhost:8081/supplier";
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);

@@ -15,7 +15,7 @@ function UpdateRate() {
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/rates/${id}`);
+        const response = await axios.get(`http://localhost:8081/rates/${id}`);
         const rateData = response.data.rate;
         setInputs({
           ...rateData, // Spread the rateData object to set all fields
@@ -30,7 +30,7 @@ function UpdateRate() {
 
   const sendRequest = async () => {
     try {
-      await axios.put(`http://localhost:8080/rates/${id}`, {
+      await axios.put(`http://localhost:8081/rates/${id}`, {
         imgurl: String(inputs.imgurl),
         username: String(inputs.username),
         email: String(inputs.email),

@@ -42,6 +42,7 @@ import UserLogin from "./Components/User/UserManagement/UserLogin/Login";
 import UserProfiel from "./Components/User/UserManagement/UserProfile/UserProfiel";
 import UserUpdateAccount from "./Components/User/UserManagement/UpdateAccount/UpdateAccount";
 
+
 //Shopping Cart ----------------------->
 //USER
 import AddToCart from "./Components/User/ShoppingCart/Cart/AddtoCart";
@@ -72,7 +73,14 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
-import Eticket from "./Pages/Eticket";
+import RegularCollection from "./Components/User/RegularCollectionManagement/RegularCollection";
+import AddRegisterUserPayment from "./Components/User/RegularCollectionManagement/AddRegisterUserPayment";
+
+
+
+import RegisterUserPaymentDetails from "./Components/Admin/RegisterUserPaymentDetails/RegisterUserPaymentDetails";
+import SpecialCollectionPayment from "./Components/User/SpecialCollection/SpecialCollectionPayment";
+import PaymentsList from "./Components/Admin/PaymentList/PaymentsList";import Eticket from "./Pages/Eticket";
 import Eticketadmin from "./Pages/Admin"
 import Error from "./Pages/404"
 
@@ -128,6 +136,8 @@ function App() {
           <Route path="/updateaccount/:id" element={<UserUpdateAccount />} />
           {/* Regular Collection  */}
           <Route path="/request" element={<RegularCollection/>}/>
+          {/*Regular Collection Payment */}
+          <Route path="/addregisteruserpayment" element={<AddRegisterUserPayment/>}/>
 
           {/* --------------- ADMIN Side ---------------*/}
           {/*Admin Home*/}
@@ -141,11 +151,6 @@ function App() {
           <Route path="/delivrydata" element={<DliveryData />} />
           <Route path="/accept/:id" element={<Accept />} />
           {/*Driver*/}
-          <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
-          <Route path="/driveraccept/:id" element={<DriverAccept />} />
-          <Route path="/DriverDash" element={<DriverDash />} />
-          <Route path="/DriversDetails" element={<DriversDetails />} />
-          <Route path="/Notifications" element={<Notifications />} />
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
@@ -202,6 +207,12 @@ function App() {
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+
+          <Route path="/registeruserpaymentdetails" element={<RegisterUserPaymentDetails />} />
+
+          {/* special collection */}
+          <Route path="/specialcollectionpayment" element={<SpecialCollectionPayment />} />
+          <Route path="/paymentslist" element={<PaymentsList />} />
           {/* RecycleService - user */}
           <Route path="/waste" element={<Wasteform/>}/>
           <Route path="/summary" element={<Summarypage/>}/>

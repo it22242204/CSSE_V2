@@ -27,7 +27,7 @@ function AddEmploye() {
     navigate("/employeedetails");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/employee", {
+    await axios.post("http://localhost:8081/employee", {
       name: inputs.name,
       gmail: inputs.gmail,
       phone: inputs.phone,

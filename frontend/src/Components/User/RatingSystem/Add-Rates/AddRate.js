@@ -53,7 +53,7 @@ function AddRate() {
   };
 
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/rates", {
+    await axios.post("http://localhost:8081/rates", {
       imgurl: inputs.imgurl,
       username: inputs.username,
       email: inputs.email,

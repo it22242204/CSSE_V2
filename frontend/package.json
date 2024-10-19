@@ -13,8 +13,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
+    "axios-mock-adapter": "^2.1.0",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
+    "jest": "^27.5.1",
     "date-fns": "^4.1.0",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
@@ -34,7 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +45,13 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+  "transform": {
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "testEnvironment": "jsdom"
+},
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -54,5 +63,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  
+  "devDependencies": {
+    "@babel/preset-react": "^7.25.7"
   }
 }

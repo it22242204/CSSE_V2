@@ -28,7 +28,7 @@ function AddVehical() {
     navigate("/vehicaldetails");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/vehical", {
+    await axios.post("http://localhost:8081/vehical", {
       name: inputs.name,
       gmail: inputs.gmail,
       phone: inputs.phone,

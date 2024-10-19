@@ -12,7 +12,7 @@ function Accept() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/deliveri/${id}`
+          `http://localhost:8081/deliveri/${id}`
         );
         setInputs(response.data.deliveries);
       } catch (error) {
@@ -23,7 +23,7 @@ function Accept() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8080/deliveri/${id}`, {
+      .put(`http://localhost:8081/deliveri/${id}`, {
         name: String(inputs.name),
         gmail: String(inputs.gmail),
         phone: String(inputs.phone),

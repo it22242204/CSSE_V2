@@ -27,7 +27,7 @@ function AddDilivery() {
     navigate("/myorder");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/deliveri", {
+    await axios.post("http://localhost:8081/deliveri", {
       name: inputs.name,
       gmail: inputs.gmail,
       phone: inputs.phone,

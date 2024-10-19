@@ -27,7 +27,7 @@ function AddDriver() {
     navigate("/driverdetails");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/drive", {
+    await axios.post("http://localhost:8081/drive", {
       name: inputs.name,
       gmail: inputs.gmail,
       phone: inputs.phone,

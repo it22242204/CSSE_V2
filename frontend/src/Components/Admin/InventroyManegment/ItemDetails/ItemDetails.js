@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import Sidebar from "../../AdminDashBord/SideBar/Sidebar";
 
-const URL = "http://localhost:8080/inventory";
+const URL = "http://localhost:8081/inventory";
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);
@@ -139,18 +139,25 @@ function ItemDetails() {
                     <td className="admin_tbl_td">{item.price}</td>
                     <td className="admin_tbl_td">{item.description}</td>
                     <td className="admin_tbl_td">
+
+                    <button className="btn_dash_payment">
+                        Payment
+                      </button>
+                      
                       <Link
                         to={`/updateinventoryitem/${item._id}`}
                         className="btn_dash_admin"
                       >
                         Update
                       </Link>
+                      
                       <button
                         onClick={() => deleteHandler(item._id)}
                         className="btn_dash_admin_dlt"
                       >
                         Delete
                       </button>
+                     
                     </td>
                   </tr>
                 ))}
