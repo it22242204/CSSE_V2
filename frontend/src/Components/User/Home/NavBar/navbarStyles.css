@@ -1,86 +1,151 @@
-/* Navbar Styling */
+/* Base Navbar Styling (applies to all screens) */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 9px 7%;
-    background-color: #037148;
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;        /* Adjusted padding for all screens */
+  background-color: #037148;
+  height: 80px;            /* Standard height for the navbar */
+  box-sizing: border-box;   /* Ensures padding is included in the height */
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;             /* Full width container for items */
+}
+
+/* Logo Styling */
+.navbar__logo {
+  width: 50px;             /* Set the logo width */
+  height: auto;            /* Maintain aspect ratio */
+}
+
+/* Navbar Items (Links, Icons) */
+.navbar__items {
+  display: flex;
+  align-items: center;
+  gap: 20px;               /* Space between items */
+}
+
+.navbar__item {
+  font-size: 1rem;         /* Base font size (relative to screen size) */
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar__item:hover {
+  color: #37ff80;          /* Hover effect */
+}
+
+/* Shopping Cart Icon */
+.navbar__cart-icon {
+  font-size: 1.5rem;       /* Relative size for the cart icon */
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar__cart-icon:hover {
+  color: #05043f;
+}
+
+/* Profile Button */
+.navbar__profile-btn {
+  background-color: #087926;
+  color: white;
+  border: 2px solid #04942a;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.navbar__profile-btn:hover {
+  background-color: #04942a;
+}
+
+/* Responsive Design */
+
+/* Mobile First Design (default style works for mobile) */
+
+/* Tablets and Small Desktops (768px and up) */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 20px 5%;         /* Adjust padding for larger screens */
+    height: 100px;            /* Slightly taller navbar */
   }
-  
-  .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 13%;
-  }
-  
-  /* Logo Styling */
+
   .navbar__logo {
-    margin-left: -190px;
-    width: 70px;
+    width: 60px;              /* Larger logo on bigger screens */
   }
-  
-  /* Navbar Items */
-  .navbar__items {
-    margin-left: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
+
   .navbar__item {
-    font-size: 22px;
-    cursor: pointer;
-    width: 150px;
-    display: flex;
+    font-size: 1.1rem;        /* Increase font size for better readability */
   }
-  
-  .navbar__item:hover {
-    color: #37ff80;
-  }
-  
-  /* Shopping Cart Icon */
+
   .navbar__cart-icon {
-    font-size: 30px;
-    cursor: pointer;
+    font-size: 1.7rem;        /* Slightly larger icon */
   }
-  
-  .navbar__cart-icon:hover {
-    color: #05043f;
-  }
-  
-  /* Profile Button */
+
   .navbar__profile-btn {
-    background-color: #035c1a;
-    color: white;
-    border: 2px solid #035c1a;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 3px;
-    padding: 3px 10px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: capitalize;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    width: 100px;
-    height: 50px;
+    padding: 10px 20px;       /* Increase button padding */
+    font-size: 1.1rem;        /* Slightly larger font */
   }
-  
-  /* Button Group (if needed) */
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 20px 0;
+}
+
+/* Large Desktops and Up (1024px and up) */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 25px 7%;         /* More padding for large screens */
+    height: 120px;            /* Taller navbar for large desktops */
   }
-  
-  .button-group__welcome-btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+
+  .navbar__logo {
+    width: 70px;              /* Bigger logo */
   }
-  
+
+  .navbar__item {
+    font-size: 1.3rem;        /* Larger navigation text */
+    margin-left: 20px;        /* Add spacing between nav items */
+  }
+
+  .navbar__cart-icon {
+    font-size: 2rem;          /* Even larger shopping cart icon */
+  }
+
+  .navbar__profile-btn {
+    padding: 12px 25px;       /* Increase button size */
+    font-size: 1.2rem;        /* Larger font on button */
+  }
+}
+
+/* Mobile Responsive (max-width: 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;   /* Stack items vertically */
+    height: auto;             /* Auto height for flexible stacking */
+  }
+
+  .navbar__container {
+    flex-direction: column;   /* Stack items in the container vertically */
+    gap: 15px;                /* Space between elements when stacked */
+  }
+
+  .navbar__items {
+    flex-direction: column;   /* Stack navbar items (links) vertically */
+    gap: 10px;                /* Add space between each item */
+  }
+
+  .navbar__profile-btn {
+    width: 100%;              /* Full-width button on mobile */
+    text-align: center;        /* Center the text */
+  }
+}

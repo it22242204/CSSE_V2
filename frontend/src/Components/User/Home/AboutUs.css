@@ -1,0 +1,140 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E8F4F8;
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #7A5DE8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #7A5DE8;
+}
+
+/* About Us Section Styles */
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.about-us-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    color: #5037DA;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #F28E2B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #FFA72D;
+}
+
+.image-content {
+    flex: 1;
+    text-align: right;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+.image-content h3 {
+    font-size: 1.5rem;
+    color: #5037DA;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.image-content ul {
+    list-style-type: disc; /* Change this to 'circle' or 'none' if you prefer */
+    margin-left: 20px; /* Adjust left margin for better spacing */
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.image-content ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+/* Additional About Us Section Styles */
+.text-content h3 {
+    font-size: 1.5rem;
+    color: #5037DA;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.text-content ul {
+    list-style-type: disc; /* Change this to 'circle' or 'none' if you prefer */
+    margin-left: 20px; /* Adjust left margin for better spacing */
+    margin-bottom: 30px;
+}
+
+.text-content ul li {
+    margin-bottom: 10px; /* Space between list items */
+}

@@ -12,6 +12,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.Headertext {
+  font-size: 2.5rem; 
+  font-weight: bold;  
+  color: #115420;            
+  text-transform: uppercase;      
+  letter-spacing: 1.5px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 20px;     
+  align-items: center;
+  margin-left: 400px;
+}
 
 .App-header {
   background-color: #282c34;

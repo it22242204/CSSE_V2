@@ -15,6 +15,14 @@
   margin-top: 100px;
   margin-left: 90px;
 }
+
+.buttongroups{
+  display: flex;        /* Use Flexbox for layout */
+  justify-content: center;  /* Center the buttons */
+  gap: 30px;            /* Gap between buttons */
+  margin: 20px 0;
+}
+
 .nav_btn_log {
   background-color: #05043f;
   color: white;
@@ -45,8 +53,15 @@
 }
 .welcome_topic {
   font-size: 70px;
-  color:rgb(7, 74, 7);
+  color: rgb(7, 74, 7);
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  font-family: 'Arial', sans-serif; /* Change to a more appealing font */
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+  /* text-decoration-line:underline; */
+  margin-bottom: 100px;
 }
+
 .welcome_btn {
   background-color: #05043f;
   color: white;
@@ -55,6 +70,21 @@
   cursor: pointer;
   border-radius: 10px;
   margin-top: 25px;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome_btns {
+  background-color: #075816;
+  color: white;
+  border: 2px solid #daede3;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: -20px;
   padding: 3px 10px;
   text-decoration: none;
   font-weight: bold;

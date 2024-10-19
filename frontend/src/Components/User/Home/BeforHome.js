@@ -26,15 +26,15 @@ function BeforHome() {
               </div>
               <div className="welcm">
                 <h1 className="welcome_topic">Welcome ECO-R</h1>
-                <div className="buttongroup">
+                <div className="buttongroups">
                 <button
-                  className="welcome_btn"
+                  className="welcome_btns"
                   onClick={() => (window.location.href = "/login")}
                 >
                   Login
                 </button>
                 <button
-                    className="welcome_btn"
+                    className="welcome_btns"
                     onClick={() => (window.location.href = "/userregister")}
                   >
                     Register

@@ -14,17 +14,18 @@ export default function Eticket() {
   });
   return (
     <div className="modified-admin-home">
-      <BeforNav/>
+      <BeforNav />
       <Container>
         <Row className="justify-content-md-center">
           <Col lg="11">
             <br />
+            <div className="Headertext">Create E-Ticket</div>
             <AddTask />
           </Col>
         </Row>
         <TasksList />
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

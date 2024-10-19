@@ -75,6 +75,7 @@ import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/Inf
 import Eticket from "./Pages/Eticket";
 import Eticketadmin from "./Pages/Admin"
 import Error from "./Pages/404"
+import AboutUs from "./Components/User/Home/AboutUs";
 
 
 import DriverDliveryData from "./Components/Driver/DiliveryManagement/Dlivery/DliveryData/DliveryData";
@@ -111,6 +112,7 @@ function App() {
           <Route path="/afetrhome" element={<Home />} />
           <Route path="/" element={<BeforHome />} />
           <Route path="/eticket" element={<Eticket />} />
+          <Route path="/aboutus"element={<AboutUs/>}/>
 
           {/*Dilivery Management*/}
           <Route path="/adddlilivey" element={<AddDilivery />} />
