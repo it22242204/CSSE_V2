@@ -91,6 +91,9 @@ import Orderdetails from './Components/User/Specialorder/Orderdetails/Orders';
 import Updateorder from './Components/User/Specialorder/Updateorder/Updateorder';
 import AddPayment from './Components/User/Specialorder/PaymentProcess/AddPayment';
 import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymentsuccessful';
+// special collection request admin
+import SpecialOrderDis from './Components/Admin/Specialorder/Orderdetail/SpecialOrderdis';
+import DriverNot from './Components/Driver/Notifications/Notifications';
 
 
 
@@ -198,7 +201,7 @@ function App() {
           <Route path="/add-cart" element={<AddToCart />} />
           <Route path="/view-cart" element={<ViewCart />} />
           <Route path="/update-cart/:id" element={<EditCart />} />
-          <Route path="/add-payment" element={<AddPayment />} />
+          {/* <Route path="/add-payment" element={<AddPayment />} /> */}
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
@@ -208,6 +211,15 @@ function App() {
           <Route path="/bill" element={<BillPage/>}/>
           {/* RecycleService - admin */}
           <Route path="/adminr" element={<Adminpanel/>}/>
+          
+          {/* special collection request */}
+          <Route path="/addspecialorder" element={<Addorder/>}/>
+          <Route path="/specialorderdetails" element={<Orderdetails/>} />
+          <Route path="/specialorderdetails/:id" element={<Updateorder/>}/>
+          <Route path="/specialpayment" element={<AddPayment/>}/>
+          <Route path="/specialpaymentsuc" element={<PaymentSuccess/>}/>
+          <Route path="/specialorderdisadmin" element={<SpecialOrderDis/>}/>
+          <Route path="/drivernot" element={<DriverNot/>}/>
         </Routes>
       </React.Fragment>
     </div>

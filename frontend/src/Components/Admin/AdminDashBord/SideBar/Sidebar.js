@@ -32,7 +32,7 @@ const Sidebar = ({ children }) => {
               </p>
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/inventoryitemdetails")}
+                onClick={() => (window.location.href = "/specialorderdisadmin")}
               >
                 Special Collection
               </p>
