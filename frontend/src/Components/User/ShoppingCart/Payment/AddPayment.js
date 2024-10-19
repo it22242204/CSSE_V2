@@ -35,7 +35,7 @@ const AddPayment = ({ cartItems }) => {
         ...payment,
         cartItems, // Send cart items in the request
       };
-      await axios.post("http://localhost:8081/payments/", paymentData);
+      await axios.post("http://localhost:8080/payments/", paymentData);
       alert("Payment added successfully.");
       navigate("/adddelivery");
     } catch (error) {

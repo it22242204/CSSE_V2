@@ -128,7 +128,7 @@ function App() {
           <Route path="/aboutus"element={<AboutUs/>}/>
 
           {/*Dilivery Management*/}
-          <Route path="/adddlilivey" element={<AddDilivery />} />
+          <Route path="/adddelivery" element={<AddDilivery />} />
           <Route path="/myorder" element={<MyOrder />} />
           {/*Rating System*/}
           <Route path="/addrate" element={<AddRate />} />
@@ -157,7 +157,7 @@ function App() {
           {/*Dilivery Management*/}
           {/*Dlivery */}
           <Route path="/delivrydata" element={<DliveryData />} />
-          <Route path="/accept/:id" element={<Accept />} />
+          <Route path="/driveraccept/:id" element={<Accept />} />
           {/*Driver*/}
           <Route path="/DriverDash" element={<DriverDash />} />
           <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
