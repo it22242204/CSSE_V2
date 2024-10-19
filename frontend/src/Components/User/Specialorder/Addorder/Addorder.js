@@ -70,7 +70,7 @@ function Addorder() {
 
   //implementing the sendrequest function from above
   const sendRequest = async () => {
-    await axios.post("http://localhost:8081/orders", {
+    await axios.post("http://localhost:8080/orders", {
       //module attribute name=name
       contactname: String(inputs.contactname),
       typeofuser: String(inputs.typeofuser),

@@ -14,7 +14,7 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/products/${id}`
+          `http://localhost:8080/products/${id}`
         );
         setProduct(response.data.product);
         setLoading(false);
@@ -30,7 +30,7 @@ const UpdateProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/products/${id}`, product);
+      await axios.put(`http://localhost:8080/products/${id}`, product);
       alert("Product updated successfully.");
       navigate("/admin-allproducts"); // Navigate to /admin-allproducts after successful update
     } catch (error) {

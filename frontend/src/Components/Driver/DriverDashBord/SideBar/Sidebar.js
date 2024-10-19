@@ -39,7 +39,7 @@ const Sidebar = ({ children }) => {
 
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/DriversDetails")}
+                onClick={() => (window.location.href = "/DriverProfile")}
               >
                 Profiles
               </p>

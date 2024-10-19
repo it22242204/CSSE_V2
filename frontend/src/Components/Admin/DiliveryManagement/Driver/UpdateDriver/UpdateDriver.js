@@ -12,7 +12,7 @@ function UpdateDriver() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/drive/${id}`
+          `http://localhost:8080/drive/${id}`
         );
         setInputs(response.data.driv);
       } catch (error) {
@@ -23,7 +23,7 @@ function UpdateDriver() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8081/drive/${id}`, {
+      .put(`http://localhost:8080/drive/${id}`, {
         name: String(inputs.name),
         phone: String(inputs.phone),
         address: String(inputs.address),

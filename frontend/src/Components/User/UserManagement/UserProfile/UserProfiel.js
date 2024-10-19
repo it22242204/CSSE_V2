@@ -15,7 +15,7 @@ function UserProfile() {
     async function fetchUserDetails() {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.post("http://localhost:8081/profile", {
+        const response = await axios.post("http://localhost:8080/profile", {
           token: token,
         });
         if (response.data.status === "ok") {
@@ -42,7 +42,7 @@ function UserProfile() {
 
     if (userConfirmed) {
       try {
-        await axios.delete(`http://localhost:8081/user/${user._id}`);
+        await axios.delete(`http://localhost:8080/user/${user._id}`);
         window.alert("account details deleted successfully!");
         history("/");
         window.location.reload(); // Reload the page

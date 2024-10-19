@@ -17,7 +17,7 @@ function MyRate() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:8081/rates?email=${email}`
+        `http://localhost:8080/rates?email=${email}`
       );
       console.log("Response:", response.data);
       const relevantCard = response.data.rate.filter(
@@ -41,7 +41,7 @@ function MyRate() {
 
     if (confirmed) {
       try {
-        await axios.delete(`http://localhost:8081/rates/${_id}`);
+        await axios.delete(`http://localhost:8080/rates/${_id}`);
         window.alert(" deleted successfully!");
         window.location.reload();
       } catch (error) {

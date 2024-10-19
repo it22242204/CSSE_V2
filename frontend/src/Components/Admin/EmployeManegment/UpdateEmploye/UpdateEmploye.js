@@ -12,7 +12,7 @@ function UpdateEmploye() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/employee/${id}`
+          `http://localhost:8080/employee/${id}`
         );
         setInputs(response.data.emp);
       } catch (error) {
@@ -23,7 +23,7 @@ function UpdateEmploye() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8081/employee/${id}`, {
+      .put(`http://localhost:8080/employee/${id}`, {
         name: String(inputs.name),
         phone: String(inputs.phone),
         address: String(inputs.address),

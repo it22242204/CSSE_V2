@@ -8,7 +8,7 @@ const SpecialCollectionPayment = ({ Amount,ColletionOption, closeModal }) => {
     cardNumber: "",
     cardExpiry: "",
     cvv: "",
-    name: Name, // Pre-fill with passed Name
+    name: "", // Pre-fill with passed Name
     colletionOption:ColletionOption,
   });
 
@@ -25,7 +25,7 @@ const SpecialCollectionPayment = ({ Amount,ColletionOption, closeModal }) => {
     };
 
     try {
-      await axios.post("http://localhost:8081/specialpayment", dataToSend);
+      await axios.post("http://localhost:8080/specialpayment", dataToSend);
       alert("Payment added successfully");
       closeModal(); // Close popup after successful submission
     } catch (error) {

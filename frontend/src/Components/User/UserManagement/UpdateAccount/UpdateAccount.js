@@ -16,7 +16,7 @@ function UpdateAccount() {
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/user/${id}`);
+        const response = await axios.get(`http://localhost:8080/user/${id}`);
         setUser(response.data.user);
       } catch (error) {
         console.error("Error fetching user details:", error);
@@ -27,7 +27,7 @@ function UpdateAccount() {
 
   const sendRequest = async () => {
     try {
-      await axios.put(`http://localhost:8081/user/${id}`, user);
+      await axios.put(`http://localhost:8080/user/${id}`, user);
     } catch (error) {
       console.error("Error updating user:", error);
     }

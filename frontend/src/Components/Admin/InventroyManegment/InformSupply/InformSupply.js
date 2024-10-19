@@ -27,7 +27,7 @@ function InformSupply() {
     navigate("/inventoryitelowstock");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8081/inform", {
+    await axios.post("http://localhost:8080/inform", {
       itemname: inputs.itemname,
       quantity: inputs.quantity,
       price: inputs.price,

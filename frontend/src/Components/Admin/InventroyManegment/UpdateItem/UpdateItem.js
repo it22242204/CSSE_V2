@@ -12,7 +12,7 @@ function UpdateItem() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/inventory/${id}`
+          `http://localhost:8080/inventory/${id}`
         );
         setInputs(response.data.invent);
       } catch (error) {
@@ -23,7 +23,7 @@ function UpdateItem() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8081/inventory/${id}`, {
+      .put(`http://localhost:8080/inventory/${id}`, {
         itemname: String(inputs.itemname),
         quantity: String(inputs.quantity),
         price: String(inputs.price),

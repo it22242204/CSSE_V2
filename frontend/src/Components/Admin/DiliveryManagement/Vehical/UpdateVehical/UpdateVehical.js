@@ -11,7 +11,7 @@ function UpdateVehical() {
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/vehical/${id}`);
+        const response = await axios.get(`http://localhost:8080/vehical/${id}`);
         setInputs(response.data.vehi);
       } catch (error) {
         console.error("Error fetching data:", error);

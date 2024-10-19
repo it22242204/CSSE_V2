@@ -14,7 +14,7 @@ function MyOrder() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:8081/deliveri?gmail=${gmail}`
+        `http://localhost:8080/deliveri?gmail=${gmail}`
       );
       console.log("Response:", response.data);
 

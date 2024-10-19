@@ -53,7 +53,7 @@ const RegularCollection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8081/regularcollection', formData);
+      const response = await axios.post('http://localhost:8080/regularcollection', formData);
       alert('Regular Collection Registered Successfully!');
       console.log(response.data);
     } catch (error) {

@@ -25,7 +25,7 @@ const AddRegisterUserPayment = ({ Name, Amount,ColletionOption, closeModal }) =>
     };
 
     try {
-      await axios.post("http://localhost:8081/userregisterpayment", dataToSend);
+      await axios.post("http://localhost:8080/userregisterpayment", dataToSend);
       alert("Payment added successfully");
       closeModal(); // Close popup after successful submission
     } catch (error) {

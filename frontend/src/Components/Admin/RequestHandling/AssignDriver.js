@@ -6,7 +6,7 @@ import { useReactToPrint } from "react-to-print";
 import Sidebar from "../AdminDashBord/SideBar/Sidebar";
 
 const URL = "http://localhost:8080/drive";
-const SMS_API_URL = "http://localhost:8080/send-sms"; // Example API for sending SMS
+const SMS_API_URL = "http://localhost:8080/send-sms"; 
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);
@@ -33,7 +33,7 @@ function AssignDriver() {
         setLoading(true);
         
         // Simulate assigning driver in the system
-        await axios.put(`${URL}/${driver._id}/drive`);
+        await axios.put(`${URL}/${driver._id}/assign-driver`);
         
         // Notify the admin
         window.alert(`Driver ${driver.name} has been assigned successfully!`);
@@ -103,9 +103,7 @@ function AssignDriver() {
               </button>
             </td>
           </tr>
-          <button className="btn_dash_admin" onClick={handlePrint}>
-            Generate Report
-          </button>
+          
         </div>
 
         <div className="tbl_con_admin" ref={ComponentsRef}>

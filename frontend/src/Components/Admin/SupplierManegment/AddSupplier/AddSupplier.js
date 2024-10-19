@@ -28,7 +28,7 @@ function AddSupplier() {
     navigate("/supplierdetails");
   };
   const sendRequest = async () => {
-    await axios.post("http://localhost:8081/supplier", {
+    await axios.post("http://localhost:8080/supplier", {
       firstname: inputs.firstname,
       lastname: inputs.lastname,
       phone: inputs.phone,

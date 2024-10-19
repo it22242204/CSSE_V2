@@ -10,7 +10,7 @@ const PaymentsList = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get("http://localhost:8081/payments");
+        const response = await axios.get("http://localhost:8080/payments");
         setPayments(response.data.payments);
       } catch (error) {
         console.error("Error fetching payments:", error);
@@ -34,7 +34,7 @@ const PaymentsList = () => {
     const confirmed = window.confirm("Are you sure you want to delete this payment?");
     if (confirmed) {
       try {
-        await axios.delete(`http://localhost:8081/payments/${_id}`);
+        await axios.delete(`http://localhost:8080/payments/${_id}`);
         setPayments((prev) => prev.filter((payment) => payment._id !== _id));
         window.alert("Payment deleted successfully!");
       } catch (error) {

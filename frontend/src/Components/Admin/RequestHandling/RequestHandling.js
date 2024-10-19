@@ -6,6 +6,7 @@ import Sidebar from '../AdminDashBord/SideBar/Sidebar';
 
 const RequestHandling = () => {
   const [requests, setRequests] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); // Loading state for accepting request
   const navigate = useNavigate(); // Initialize the navigate hook
 
   useEffect(() => {
@@ -26,18 +27,29 @@ const RequestHandling = () => {
 
   const handleAccept = async (id, phoneNumber) => {
     try {
+      setIsLoading(true); // Start loading
+
+      // Accept the request in the backend
       await axios.put(`http://localhost:8080/regularcollection/${id}/accept`);
+      
+      // Notify the admin
       alert('Request Accepted!');
 
-      // Send notification to user (e.g., via SMS or email)
+      // Notify the user via the backend notification service (SMS, Email, etc.)
       await axios.post('http://localhost:8080/notifications/send', {
         phoneNumber,
         message: 'Your waste collection request has been accepted!',
       });
 
-      // Optionally refresh the list or update the request status in the UI
+      // Update UI - remove the accepted request from the list
+      setRequests(prevRequests => 
+        prevRequests.filter(request => request._id !== id)
+      );
     } catch (error) {
       console.error('Error accepting the request:', error);
+      alert('Failed to accept the request. Please try again.');
+    } finally {
+      setIsLoading(false); // Stop loading
     }
   };
 
@@ -74,8 +86,12 @@ const RequestHandling = () => {
                   <td>{request.ColletionOption}</td>
                   <td>{request.Amount}</td>
                   <td>
-                    <button onClick={() => handleAccept(request._id, request.PhoneNumber)} className="accept-button">
-                      Accept
+                    <button 
+                      onClick={() => handleAccept(request._id, request.PhoneNumber)} 
+                      className="accept-button"
+                      disabled={isLoading} // Disable button while loading
+                    >
+                      {isLoading ? 'Processing...' : 'Accept'}
                     </button>
                     <button onClick={() => handleAssignDriver(request._id)} className="assign-button">
                       Assign Driver

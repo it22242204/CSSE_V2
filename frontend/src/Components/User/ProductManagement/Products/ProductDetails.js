@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const fetchProductDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/products/${id}`
+          `http://localhost:8080/products/${id}`
         );
         setProduct(response.data.product);
       } catch (error) {
