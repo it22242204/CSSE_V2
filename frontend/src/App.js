@@ -20,6 +20,7 @@ import MyOrder from "./Components/User/DeliveryManagement/MyOrder/MyOrder";
 //USER
 import AddRate from "./Components/User/RatingSystem/Add-Rates/AddRate";
 import RateDetails from "./Components/User/RatingSystem/Rate/RateDetails";
+import AdminRateDetails from "./Components/Admin/Rate/AdminRateDetails";
 import MyRate from "./Components/User/RatingSystem/MyRate/MyRate";
 import UpdateRate from "./Components/User/RatingSystem/UpdateRate/UpdateRate";
 
@@ -80,7 +81,8 @@ import AddRegisterUserPayment from "./Components/User/RegularCollectionManagemen
 
 import RegisterUserPaymentDetails from "./Components/Admin/RegisterUserPaymentDetails/RegisterUserPaymentDetails";
 import SpecialCollectionPayment from "./Components/User/SpecialCollection/SpecialCollectionPayment";
-import PaymentsList from "./Components/Admin/PaymentList/PaymentsList";import Eticket from "./Pages/Eticket";
+import PaymentsList from "./Components/Admin/PaymentList/PaymentsList";
+import Eticket from "./Pages/Eticket";
 import Eticketadmin from "./Pages/Admin"
 import Error from "./Pages/404"
 import AboutUs from "./Components/User/Home/AboutUs";
@@ -131,6 +133,7 @@ function App() {
           {/*Rating System*/}
           <Route path="/addrate" element={<AddRate />} />
           <Route path="/ratedetails" element={<RateDetails />} />
+          <Route path="/AdminRateDetails" element={<AdminRateDetails />} />
           <Route path="/myrate" element={<MyRate />} />
           <Route path="/updaterate/:id" element={<UpdateRate />} />
           {/*Product Management*/}
@@ -156,6 +159,11 @@ function App() {
           <Route path="/delivrydata" element={<DliveryData />} />
           <Route path="/accept/:id" element={<Accept />} />
           {/*Driver*/}
+          <Route path="/DriverDash" element={<DriverDash />} />
+          <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
+          <Route path="/driveraccept" element={<DriverAccept />} />
+          <Route path="/DriverProfile" element={<DriversDetails />} />
+          <Route path="/Notifications" element={<Notifications />} />
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
@@ -180,14 +188,8 @@ function App() {
           {/*Inventroy Manegment*/}
           <Route path="/addinventoryitem" element={<AddInventory />} />
           <Route path="/inventoryitemdetails" element={<InventoryDetails />} />
-          <Route
-            path="/inventoryitelowstock"
-            element={<LowStockInventoryItem />}
-          />
-          <Route
-            path="/updateinventoryitem/:id"
-            element={<UpdateInventory />}
-          />
+          <Route path="/inventoryitelowstock" element={<LowStockInventoryItem />} />
+          <Route path="/updateinventoryitem/:id" element={<UpdateInventory />} />
           <Route path="/infromsupply" element={<InformSupply />} />
           {/*Employe Manegment*/}
           <Route path="/addemployee" element={<AddEmploye />} />
@@ -199,11 +201,7 @@ function App() {
           <Route exact path="/admin-allproducts" element={<AllProducts />} />
           <Route exact path="/update/:id" element={<UpdateProducts />} />
           <Route exact path="/viewall" element={<ViewAllProducts />} />
-          <Route
-            exact
-            path="/viewoneproduct/:id"
-            element={<ViewOneProduct />}
-          />
+          <Route exact path="/viewoneproduct/:id" element={<ViewOneProduct />} />
           {/*Shopping Cart*/}
           <Route path="/add-cart" element={<AddToCart />} />
           <Route path="/view-cart" element={<ViewCart />} />
