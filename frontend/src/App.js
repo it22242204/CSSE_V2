@@ -48,7 +48,7 @@ import AddToCart from "./Components/User/ShoppingCart/Cart/AddtoCart";
 import ViewCart from "./Components/User/ShoppingCart/Cart/Carts";
 import EditCart from "./Components/User/ShoppingCart/Cart/EditCartItem";
 // import AddPayment from "./Components/User/ShoppingCart/Payment/AddPayment";
-//arshad commanted 5oth line
+
 //Supplier Manegment ----------------------->
 //ADMIN
 import AddSupplier from "./Components/Admin/SupplierManegment/AddSupplier/AddSupplier";
@@ -84,6 +84,24 @@ import DriverDash from "./Components/Driver/DriverDashBord/Dash/DriverDash";
 import Notifications from "./Components/Driver/DiliveryManagement/Notifications/Notifications";
 import RequestHandling from "./Components/Admin/RequestHandling/RequestHandling";
 import AssignDriver from "./Components/Admin/RequestHandling/AssignDriver";
+
+//special collection requests User
+import Addorder from './Components/User/Specialorder/Addorder/Addorder';
+import Orderdetails from './Components/User/Specialorder/Orderdetails/Orders';
+import Updateorder from './Components/User/Specialorder/Updateorder/Updateorder';
+import AddPayment from './Components/User/Specialorder/PaymentProcess/AddPayment';
+import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymentsuccessful';
+
+
+
+//Recycle Service - User
+import Wasteform from './Components/User/RecycleService/Wasteform';
+import Summarypage from './Components/User/RecycleService/Summarypage';
+import BillPage from './Components/User/RecycleService/BillPage';
+
+//Recycle service - admin
+import Adminpanel from './Components/Admin/RecycleService/Adminpanel';
+
 function App() {
   return (
     <div>
