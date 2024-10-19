@@ -42,6 +42,12 @@ function AfterNav() {
             >
               Recycle Services
             </h3>
+            <h3
+              className="navbar__item"
+              onClick={() => (window.location.href = "/myorder")}
+            >
+              Orders
+            </h3>
             <FaShoppingCart
               className="navbar__cart-icon"
               onClick={() => (window.location.href = "/view-cart")}

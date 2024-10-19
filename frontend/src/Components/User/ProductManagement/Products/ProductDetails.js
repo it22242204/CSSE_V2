@@ -55,9 +55,9 @@ const ProductDetails = () => {
         <div>
           <h3 className="itm_name_view">{name}</h3>
           <img src={image} alt={name} className="view_iten_img" />
-          <p className="itmname">Location: {location}</p>
+          <p className="itmname">Specifications: {location}</p>
           <p className="itmname">Price: Rs.{price}</p>
-          <p className="itmname">Code: {code}</p>
+          <p className="itmname">price per Kg: {code}</p>
           <button className="cart_cneter_btn" onClick={handleAddToCart}>Add to Cart</button>
           <button
               className="cart_cneter_btn"

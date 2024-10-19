@@ -1,0 +1,152 @@
+/* Main Container for the tasks list component */
+.ResponceContainer {
+    /* margin: 20px auto; */
+    margin-left: 150px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Flex layout for search bar and generate report button */
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Search input styling */
+  .form-control {
+    width: 700px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #05043f;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  .search_bar {
+    width: 300px;
+    margin-left: 30px;
+  }
+  
+  .form-control:focus {
+    border-color: #05043f;
+    box-shadow: none;
+  }
+  
+  /* Generate Report Button Styling */
+  .btn-primary {
+    background-color: #144d0a;
+    color: white;
+    border: 2px solid #0e6436;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 620px;
+    margin-left: 10px;
+  }
+  
+  .btn-primary:hover {
+    background-color: white;
+    color: #05043f;
+    border-color: #05043f;
+  }
+  
+  /* Table container and styling */
+  .table_details_admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin_tbl_th, .admin_tbl_td {
+    padding: 12px;
+    border: 2px solid #05043f;
+    text-align: center;
+    text-transform: capitalize;
+    max-width: 400px;
+  }
+  
+  .admin_tbl_th {
+    background-color: #05043f;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .admin_tbl_td {
+    background-color: #f9f9f9;
+    font-size: 14px;
+  }
+  
+  /* Hover effect for table rows */
+  .table_details_admin tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Action buttons in the table cells */
+  .table_actions .btn {
+    margin-right: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .table_actions .btn-primary {
+    background-color: #05043f;
+    border-color: #05043f;
+    color: white;
+  }
+  
+  .table_actions .btn-primary:hover {
+    background-color: white;
+    color: #05043f;
+    border-color: #05043f;
+  }
+  
+  .table_actions .btn-danger {
+    background-color: red;
+    border-color: red;
+    color: white;
+  }
+  
+  .table_actions .btn-danger:hover {
+    background-color: white;
+    color: red;
+    border-color: red;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-control {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .table_details_admin, .table_details_admin thead, .table_details_admin tbody, .table_details_admin th, .table_details_admin td, .table_details_admin tr {
+      display: block;
+    }
+  
+    .table_details_admin thead {
+      display: none;
+    }
+  
+    .table_details_admin td {
+      padding-left: 50%;
+      text-align: right;
+      position: relative;
+    }
+  
+    .table_details_admin td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      color: #05043f;
+      text-align: left;
+    }
+  }
+  

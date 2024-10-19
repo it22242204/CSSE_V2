@@ -1,15 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from './store';
 
-ReactDOM.render(
+const container = document.getElementById("root"); // Get the root element
+const root = createRoot(container); // Create a root using createRoot
+
+root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
-  </BrowserRouter>,
-  document.getElementById("root")
+  </BrowserRouter>
 );
-

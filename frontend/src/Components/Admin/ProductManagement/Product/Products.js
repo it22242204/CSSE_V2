@@ -140,9 +140,9 @@ const Products = () => {
               <tr className="admin_tbl_tr">
                 <th className="admin_tbl_th">Name</th>
                 <th className="admin_tbl_th">Image</th>
-                <th className="admin_tbl_th">Location</th>
+                <th className="admin_tbl_th">Specifications</th>
                 <th className="admin_tbl_th">Price</th>
-                <th className="admin_tbl_th">Code</th>
+                <th className="admin_tbl_th">price per Kg</th>
                 <th className="admin_tbl_th">Action</th>
               </tr>
             </thead>

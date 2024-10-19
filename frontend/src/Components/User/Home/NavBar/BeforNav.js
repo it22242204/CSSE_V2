@@ -14,7 +14,7 @@ function BeforNav() {
         <div className="nav_item_user">
           <h3 className="navitem" onClick={() => (window.location.href = "/")}>Home</h3>
           <h3 className="navitem" onClick={() => (window.location.href = "/")}>About</h3>
-          <h3 className="navitem" onClick={() => (window.location.href = "/")}>Contact Us</h3>
+          <h3 className="navitem" onClick={() => (window.location.href = "/Eticket")}>Contact Us</h3>
           <button
             className="nav_btn_log"
             onClick={() => (window.location.href = "/adminlogin")}

@@ -12,9 +12,9 @@ const Product = ({ product }) => {
     <div className="item_details_cart">
       <h3 className="carname">{name}</h3>
       <img className="itemimg_addreate" src={image} alt={name} />
-      <p className="itm_detil_body">Location: {location}</p>
+      <p className="itm_detil_body">Specifications: {location}</p>
       <p className="itm_detil_body">Price: Rs.{price}.00</p>
-      <p className="itm_detil_body">Code: {code}</p>
+      <p className="itm_detil_body">price per Kg: {code}</p>
       <Link className="cart_cneter_btn" to={`/viewoneproduct/${_id}`}>
         View
       </Link>

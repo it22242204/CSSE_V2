@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const connectDB = require("./Config/db.js");
+const connectDB = require("./config/db.js");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
 
-//Link Routs
+// Import Routes
+const taskRoutes = require("./Routes/taskRoute.js");
 const EmployeeRoute = require("./Routes/EmployeManegmentRoutes.js");
 const InventoryRoute = require("./Routes/InventroyManegmentRoutes.js");
 const RatingRoute = require("./Routes/RatingSystemRoutes.js");
@@ -25,12 +26,18 @@ const SpecialcollectionRoute=require("./Routes/Specialorderroutes.js");
 const paymentRoutes = require('./Routes/priceRoutes.js');
 const priceRoute = require("./Routes/priceRoutes.js")
 
+// Configure environment variables
 dotenv.config();
+
+// Connect to the database
 connectDB();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-//Routes
+// Routes
+app.use("/api/tasks", taskRoutes);  // Existing task routes
 app.use("/employee", EmployeeRoute);
 app.use("/inventory", InventoryRoute);
 app.use("/rates", RatingRoute);
@@ -48,9 +55,10 @@ app.use("/inform", InformRoute);
 app.use("/regularcollection", RegularCollectionRoute);
 app.use('/api/payment', priceRoute);
 
+// Set the PORT
 const PORT = process.env.PORT || 8080;
 
+// Start the server
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
-
