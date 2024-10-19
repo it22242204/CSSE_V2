@@ -67,7 +67,7 @@ const AddProduct = () => {
               />
             </div>
             <div>
-              <label className="form_box_item_lable">Location:</label>
+              <label className="form_box_item_lable">Specifications:</label>
               <input
                 className="form_box_item_input"
                 type="text"
@@ -90,7 +90,7 @@ const AddProduct = () => {
               />
             </div>
             <div>
-              <label className="form_box_item_lable">Code:</label>
+              <label className="form_box_item_lable">price per Kg:</label>
               <input
                 className="form_box_item_input"
                 type="text"
