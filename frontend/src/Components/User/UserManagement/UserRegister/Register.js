@@ -29,7 +29,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/user", user);
+      const response = await axios.post("http://localhost:8081/user", user);
       if (response.data && response.data.err === "user exists") {
         alert(
           "User with this email already exists. Please use a different email."

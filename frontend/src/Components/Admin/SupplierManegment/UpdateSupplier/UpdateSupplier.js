@@ -12,7 +12,7 @@ function UpdateSupplier() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/supplier/${id}`
+          `http://localhost:8081/supplier/${id}`
         );
         setInputs(response.data.supply);
       } catch (error) {
@@ -23,7 +23,7 @@ function UpdateSupplier() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8080/supplier/${id}`, {
+      .put(`http://localhost:8081/supplier/${id}`, {
         firstname: String(inputs.firstname),
         lastname: String(inputs.lastname),
         phone: String(inputs.phone),

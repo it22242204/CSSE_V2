@@ -29,7 +29,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/products");
+        const response = await axios.get("http://localhost:8081/products");
         setProducts(response.data.products);
       } catch (error) {
         console.error("Error fetching products:", error);

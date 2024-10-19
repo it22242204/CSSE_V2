@@ -11,7 +11,7 @@ const RequestHandling = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/regularcollection");
+        const response = await axios.get("http://localhost:8081/regularcollection");
         console.log('Fetched Requests:', response.data);
 
         const data = Array.isArray(response.data.regularCollections) ? response.data.regularCollections : [];
@@ -26,11 +26,11 @@ const RequestHandling = () => {
 
   const handleAccept = async (id, phoneNumber) => {
     try {
-      await axios.put(`http://localhost:8080/regularcollection/${id}/accept`);
+      await axios.put(`http://localhost:8081/regularcollection/${id}/accept`);
       alert('Request Accepted!');
 
       // Send notification to user (e.g., via SMS or email)
-      await axios.post('http://localhost:8080/notifications/send', {
+      await axios.post('http://localhost:8081/notifications/send', {
         phoneNumber,
         message: 'Your waste collection request has been accepted!',
       });

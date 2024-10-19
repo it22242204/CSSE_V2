@@ -52,7 +52,7 @@ const AddToCart = () => {
     e.preventDefault();
     console.log("Submitting form...");
     try {
-      await axios.post("http://localhost:8080/carts/", item);
+      await axios.post("http://localhost:8081/carts/", item);
       alert("Item added to cart successfully.");
       history("/view-cart");
     } catch (error) {

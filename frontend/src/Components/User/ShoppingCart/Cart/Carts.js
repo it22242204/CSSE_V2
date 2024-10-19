@@ -17,7 +17,7 @@ const Carts = () => {
   useEffect(() => {
     const fetchCarts = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/carts/");
+        const response = await axios.get("http://localhost:8081/carts/");
         setCarts(response.data.carts);
         setLoading(false);
       } catch (error) {
@@ -40,7 +40,7 @@ const Carts = () => {
 
   const handleRemoveFromCart = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/carts/${id}`);
+      await axios.delete(`http://localhost:8081/carts/${id}`);
       setCarts((prevCarts) => prevCarts.filter((cart) => cart._id !== id));
       alert("Item removed from cart successfully.");
     } catch (error) {

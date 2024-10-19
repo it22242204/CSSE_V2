@@ -13,7 +13,7 @@ const AdminPanel = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/payment/');
+      const response = await axios.get('http://localhost:8081/api/payment/');
       console.log(response.data);
 
       if (Array.isArray(response.data)) {
@@ -36,7 +36,7 @@ const AdminPanel = () => {
     const paymentId = paymentDetails[index]._id; // Get the payment ID
 
     try {
-        const response = await axios.patch(`http://localhost:8080/api/payment/${paymentId}/status`, { status: 'Completed' });
+        const response = await axios.patch(`http://localhost:8081/api/payment/${paymentId}/status`, { status: 'Completed' });
         console.log('Server Response:', response.data); // Log the server response
 
         // Optimistically update the local state

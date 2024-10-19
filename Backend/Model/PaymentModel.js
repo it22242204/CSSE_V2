@@ -27,6 +27,23 @@ const paymentSchema = new Schema({
     type: String,
     required: true,
   },
+  // Field to store cart items
+  cartItems: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      qty: {
+        type: Number,
+        required: true,
+      },
+      total: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,

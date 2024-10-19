@@ -19,7 +19,7 @@ const EditCartItem = () => {
   useEffect(() => {
     const fetchCartItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/carts/${id}`);
+        const response = await axios.get(`http://localhost:8081/carts/${id}`);
         setItem(response.data.cart);
       } catch (error) {
         console.error("Error fetching cart item:", error);
@@ -49,7 +49,7 @@ const EditCartItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8080/carts/${id}`, item);
+      await axios.put(`http://localhost:8081/carts/${id}`, item);
       alert("Cart item updated successfully.");
       history("/view-cart");
     } catch (error) {

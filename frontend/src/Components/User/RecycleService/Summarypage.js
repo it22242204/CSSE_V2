@@ -65,7 +65,7 @@ const SummaryPage = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/api/payment/add', {
+      const response = await fetch('http://localhost:8081/api/payment/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(paymentDetails),

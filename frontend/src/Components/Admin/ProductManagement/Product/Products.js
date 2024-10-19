@@ -49,7 +49,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/products");
+      const response = await axios.get("http://localhost:8081/products");
       setProducts(response.data.products);
     } catch (error) {
       setAlertMessage("Error fetching products.");
@@ -62,7 +62,7 @@ const Products = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/products/${id}`);
+      await axios.delete(`http://localhost:8081/products/${id}`);
       setProducts((prevProducts) =>
         prevProducts.filter((product) => product._id !== id)
       );
