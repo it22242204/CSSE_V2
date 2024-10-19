@@ -67,8 +67,6 @@ const AdminPanel = () => {
       <div style={styles.container}> 
         <h2 style={styles.heading}>Recyclable Wastes Requests Received</h2> 
         
-        {notification && <div style={styles.notification}>{notification}</div>} {/* Render notification message */}
-
         <table style={styles.table}> 
           <thead> 
             <tr style={styles.tableHeader}> 
