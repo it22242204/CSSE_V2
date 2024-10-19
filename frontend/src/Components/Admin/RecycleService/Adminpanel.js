@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const AdminPanel = () => {
   const [paymentDetails, setPaymentDetails] = useState([]);
   const [expandedOrderIndex, setExpandedOrderIndex] = useState(null);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -32,19 +32,34 @@ const AdminPanel = () => {
     setExpandedOrderIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
-  const handleStatusChange = (index) => {
-    setPaymentDetails(prevDetails => {
-      const newDetails = [...prevDetails];
-      newDetails[index] = {
-        ...newDetails[index],
-        status: 'Completed' // Update the status to Completed
-      };
-      return newDetails;
-    });
-  };
+  const handleStatusChange = async (index) => {
+    const paymentId = paymentDetails[index]._id; // Get the payment ID
+
+    try {
+        const response = await axios.patch(`http://localhost:8080/api/payment/${paymentId}/status`, { status: 'Completed' });
+        console.log('Server Response:', response.data); // Log the server response
+
+        // Optimistically update the local state
+        setPaymentDetails(prevDetails => {
+            const updatedDetails = [...prevDetails];
+            updatedDetails[index].status = 'Completed'; // Change the status locally
+            return updatedDetails;
+        });
+    } catch (error) {
+        console.error('Error updating payment status:', error);
+        alert('Failed to update payment status. Please try again later.');
+    }
+};
+
+// Ensure fetchData correctly retrieves data on mount
+useEffect(() => {
+    fetchData(); // Refetch data when component mounts
+}, []);
+
+  
 
   const handleAssignDriver = (orderId) => {
-    navigate(`/assigndriver`, { state: { orderId } }); // Navigate to /assigndriver with order ID
+    navigate(`/assigndriver`, { state: { orderId } });
   };
 
   return (
@@ -77,7 +92,7 @@ const AdminPanel = () => {
                         style={styles.payButton}
                         onClick={(e) => {
                           e.stopPropagation(); // Prevent row expansion when clicking the button
-                          handleStatusChange(index);
+                          handleStatusChange(index); // Change status to Completed
                         }}
                       >
                         Pending
@@ -91,11 +106,18 @@ const AdminPanel = () => {
                       </button>
                     )}
                     <button
-                      style={styles.assignButton}
+                      style={{
+                        ...styles.assignButton,
+                        cursor: payment.status !== 'Completed' ? 'pointer' : 'not-allowed',
+                        backgroundColor: payment.status !== 'Completed' ? '#2196F3' : '#ccc'
+                      }}
                       onClick={(e) => {
                         e.stopPropagation(); // Prevent row expansion
-                        handleAssignDriver(payment.id); // Pass order ID to the navigation
+                        if (payment.status !== 'Completed') { // Only allow if not completed
+                          handleAssignDriver(payment.id);
+                        }
                       }}
+                      disabled={payment.status === 'Completed'} // Disable if completed
                     >
                       Assign Driver
                     </button>
@@ -147,9 +169,8 @@ const AdminPanel = () => {
                           ))
                         )}
 
-                        {/* Display Address */}
                         <h4 style={{ marginTop: '10px' }}>Address:</h4>
-                        <p>{payment.address || 'No address provided.'}</p> {/* Check if address is available */}
+                        <p>{payment.address || 'No address provided.'}</p>
                       </div>
                     </td>
                   </tr>
@@ -211,7 +232,6 @@ const styles = {
     border: 'none',
     padding: '8px 12px',
     marginLeft: '10px',
-    cursor: 'pointer',
     borderRadius: '4px',
     transition: 'background-color 0.3s'
   },

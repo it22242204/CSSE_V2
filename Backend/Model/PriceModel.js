@@ -20,7 +20,8 @@ const recyclePriceSchema = new mongoose.Schema({
       bankname: { type: String },
       accountnumber: { type: Number },
     },
-],
+  ],
+  status: { type: String, default: 'Pending' },
 }, { timestamps: true });
 
 const Payment = mongoose.model('Price', recyclePriceSchema)
