@@ -33,7 +33,7 @@ function AssignDriver() {
         setLoading(true);
         
         // Simulate assigning driver in the system
-        await axios.put(`${URL}/${driver._id}/assign-driver`);
+        await axios.put(`${URL}/${driver._id}/drive`);
         
         // Notify the admin
         window.alert(`Driver ${driver.name} has been assigned successfully!`);
