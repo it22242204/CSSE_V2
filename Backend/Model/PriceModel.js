@@ -18,7 +18,7 @@ const recyclePriceSchema = new mongoose.Schema({
     {
       accountname: { type: String },
       bankname: { type: String },
-      accountnumber: { type: Number },
+      accountnumber: { type: String },
     },
   ],
   status: { type: String, default: 'Pending' },
