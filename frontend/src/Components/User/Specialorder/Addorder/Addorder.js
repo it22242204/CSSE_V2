@@ -7,6 +7,7 @@ import axios from 'axios';
 import AfterNav from '../../Home/NavBar/AfterNav';
 import Footer from '../../../Footer/Footer';
 import Bin from './bin.png';
+import SpecialCollectionPayment from '../../SpecialCollection/SpecialCollectionPayment';
 
 function Addorder() {
   const rate = 200;
@@ -63,13 +64,13 @@ function Addorder() {
     console.log(inputs);
     sendRequest().then(() => {
       alert("Please proceed to payment");
-      history('/specialpayment');
+      history('/specialcollectionpayment');
     });
   };
 
   //implementing the sendrequest function from above
   const sendRequest = async () => {
-    await axios.post("http://localhost:8080/orders", {
+    await axios.post("http://localhost:8081/orders", {
       //module attribute name=name
       contactname: String(inputs.contactname),
       typeofuser: String(inputs.typeofuser),

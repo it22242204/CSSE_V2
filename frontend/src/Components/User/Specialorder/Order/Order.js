@@ -15,7 +15,7 @@ function Order(props) {
       try {
         await axios.delete(`http://localhost:8080/orders/${_id}`)
           .then(res => res.data)
-          .then(() => history("/"))
+           .then(() => history("/"))
           .then(() => history("/specialorderdetails"));
       } catch (error) {
         console.log("Error in order deleting:", error);

@@ -56,6 +56,7 @@ app.use("/inform", InformRoute);
 app.use("/regularcollection", RegularCollectionRoute);
 app.use("/userregisterpayment", UserRegisterPaymentRoute);
 app.use("/specialpayment", SpecialPaymentRoute);app.use('/api/payment', priceRoute);
+app.use("/orders",SpecialcollectionRoute)
 
 // Set the PORT
 const PORT = process.env.PORT || 8081;

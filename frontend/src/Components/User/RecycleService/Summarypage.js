@@ -37,7 +37,6 @@ const SummaryPage = () => {
     }
   }, [navigate]);
    
-
   // Calculate subtotal dynamically
   const subtotal = wasteDetails.reduce(
     (total, waste) => total + waste.pricePerKg * waste.quantity,
@@ -45,6 +44,12 @@ const SummaryPage = () => {
   );
 
   const handleConfirm = async () => {
+    if (wasteDetails.length === 0) {
+      alert('No wastes available. Please select a waste.');
+      navigate('/waste')
+      return;
+    }
+
     if (paymentMethod === 'Card' && (!accountname || !bankname || !accountnumber)) {
       alert('Please fill in all card details.');
       return;

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const SpecialCollectionPayment = ({  }) => {
+const SpecialCollectionPayment = ({ Amount,ColletionOption, closeModal }) => {
   const [formData, setFormData] = useState({
-    amount: "", // Pre-fill with passed Amount
+    amount: Amount, // Pre-fill with passed Amount
     currency: "LKR",
     cardNumber: "",
     cardExpiry: "",
     cvv: "",
+    name: Name, // Pre-fill with passed Name
+    colletionOption:ColletionOption,
   });
 
   const handleChange = (e) => {
@@ -25,14 +27,14 @@ const SpecialCollectionPayment = ({  }) => {
     try {
       await axios.post("http://localhost:8081/specialpayment", dataToSend);
       alert("Payment added successfully");
-      //closeModal(); // Close popup after successful submission
+      closeModal(); // Close popup after successful submission
     } catch (error) {
       console.error("There was an error adding the payment!", error);
     }
   };
 
   return (
-    <div style={styles.container}>
+    <div>
       <form onSubmit={handleSubmit} style={styles.form}>
         <h2 style={styles.heading}>Add Payment</h2>
         
@@ -86,7 +88,7 @@ const SpecialCollectionPayment = ({  }) => {
         />
         
         <div style={styles.buttonContainer}>
-          <button type="button" style={styles.cancelButton}>
+          <button type="button" style={styles.cancelButton} onClick={closeModal}>
             Cancel
           </button>
           <button type="submit" style={styles.submitButton}>
