@@ -1,4 +1,3 @@
-// Carts.js
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./cart.css";
@@ -48,20 +47,21 @@ const Carts = () => {
       alert("Failed to remove item from cart");
     }
   };
-  /*PDF Function */
+
   const ComponentsRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => ComponentsRef.current,
-    DocumentTitle: " Details Report",
-    onafterprint: () => alert(" Details Report Successfully Download !"),
+    DocumentTitle: "Details Report",
+    onafterprint: () => alert("Details Report Successfully Downloaded!"),
   });
+
   return (
     <div>
       <AfterNav />
       <div className="carts_container">
         <h1 className="topic_mash_mart">
           Cart
-          <span className="sub_topic_mash_mart"> Details</span>{" "}
+          <span className="sub_topic_mash_mart"> Details</span>
         </h1>
         <div className="button-container conenn">
           <Link to="/viewall" className="btn_dash_admin">
@@ -104,13 +104,13 @@ const Carts = () => {
                         >
                           Delete
                         </button>
-                        <br></br>
-                        <br></br>
+                        <br />
+                        <br />
                         <Link
                           className="btn_dash_admin"
                           to={`/update-cart/${cart._id}`}
                         >
-                          update
+                          Update
                         </Link>
                       </div>
                     </div>
@@ -122,7 +122,7 @@ const Carts = () => {
                     </h3>
                   </div>
                 </div>
-                {/* Render AddPayment component with cartItems prop */}
+                {/* Pass the carts (cart items) to AddPayment */}
                 <AddPayment cartItems={carts} />
               </div>
             )}

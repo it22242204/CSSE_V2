@@ -13,7 +13,7 @@ const Product = ({ product, onDelete }) => {
     );
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8080/products/${_id}`);
+        await axios.delete(`http://localhost:8081/products/${_id}`);
         onDelete(_id);
         alert("Product deleted successfully.");
         window.location.reload(); // Show alert after successful deletion

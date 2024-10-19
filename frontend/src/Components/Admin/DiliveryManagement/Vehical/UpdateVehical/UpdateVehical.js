@@ -21,7 +21,7 @@ function UpdateVehical() {
   }, [id]);
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8080/vehical/${id}`, {
+      .put(`http://localhost:8081/vehical/${id}`, {
         name: String(inputs.name),
         phone: String(inputs.phone),
         address: String(inputs.address),

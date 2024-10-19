@@ -1,4 +1,3 @@
-// Controller to fetch all waste items
 const Payment = require('../Model/PriceModel'); // Ensure your Payment model is correctly imported
 
 // Controller to fetch all payment items
@@ -48,5 +47,33 @@ const addPayment = async (req, res) => {
   }
 };
 
+// Controller to update the status of a payment item
+const updatePaymentStatus = async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body; // Expecting status in the request body
+
+  // Validate input data
+  if (!status) {
+    return res.status(400).json({ message: 'Status is required.' });
+  }
+
+  try {
+    const updatedPayment = await Payment.findByIdAndUpdate(
+      id,
+      { status }, // Update the status
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedPayment) {
+      return res.status(404).json({ message: 'Payment not found.' });
+    }
+
+    res.status(200).json({ message: 'Payment status updated successfully!', payment: updatedPayment });
+  } catch (error) {
+    console.error('Error updating payment status:', error);
+    res.status(500).json({ message: 'Error updating payment status.', error });
+  }
+};
+
 // Export the controller functions
-module.exports = { getAllPayments, addPayment , getPaymentById};
+module.exports = { getAllPayments, addPayment, getPaymentById, updatePaymentStatus };

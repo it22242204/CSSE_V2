@@ -7,6 +7,7 @@ import axios from 'axios';
 import AfterNav from '../../Home/NavBar/AfterNav';
 import Footer from '../../../Footer/Footer';
 import Bin from './bin.png';
+import SpecialCollectionPayment from '../../SpecialCollection/SpecialCollectionPayment';
 
 function Addorder() {
   const rate = 200;
@@ -63,7 +64,7 @@ function Addorder() {
     console.log(inputs);
     sendRequest().then(() => {
       alert("Please proceed to payment");
-      history('/specialpayment');
+      history('/specialcollectionpayment');
     });
   };
 

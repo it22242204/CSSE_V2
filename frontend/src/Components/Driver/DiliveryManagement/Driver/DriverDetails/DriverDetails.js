@@ -109,7 +109,7 @@ function DriverDetails() {
                 <th className="admin_tbl_th">phone</th>
                 <th className="admin_tbl_th">address</th>
                 <th className="admin_tbl_th">gmail</th>
-                {/* <th className="admin_tbl_th">action</th> */}
+                <th className="admin_tbl_th">action</th>
               </tr>
             </thead>
             {noResults ? (
@@ -127,8 +127,8 @@ function DriverDetails() {
                     <td className="admin_tbl_td">{item.phone}</td>
                     <td className="admin_tbl_td">{item.address}</td>
                     <td className="admin_tbl_td">{item.gmail}</td>
-                    {/* <td className="admin_tbl_td">
-                      <Link
+                    <td className="admin_tbl_td">
+                       <Link
                         to={`/updateedriver/${item._id}`}
                         className="btn_dash_admin"
                       >
@@ -140,7 +140,7 @@ function DriverDetails() {
                       >
                         Delete
                       </button>
-                    </td> */}
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -24,7 +24,12 @@ const Sidebar = ({ children }) => {
               >
                 Notifications
               </p>
-
+              <p
+                className="nav_item"
+                onClick={() => (window.location.href = "/drivernot")}
+              >
+                Special Collection Notifications
+              </p>
               <p
                 className="nav_item"
                 onClick={() => (window.location.href = "/driverdelivrydata")}
@@ -34,7 +39,7 @@ const Sidebar = ({ children }) => {
 
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/DriversDetails")}
+                onClick={() => (window.location.href = "/DriverProfile")}
               >
                 Profiles
               </p>

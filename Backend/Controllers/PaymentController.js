@@ -1,5 +1,6 @@
 const Payment = require("../Model/PaymentModel");
 
+// Get all payments
 const getAllPayments = async (req, res, next) => {
   let payments;
   try {
@@ -14,8 +15,9 @@ const getAllPayments = async (req, res, next) => {
   return res.status(200).json({ payments });
 };
 
+// Add a new payment
 const addPayment = async (req, res, next) => {
-  const { amount, currency, cardNumber, cardExpiry, cvv, status } = req.body;
+  const { amount, currency, cardNumber, cardExpiry, cvv, status, cartItems } = req.body;
 
   const newPayment = new Payment({
     amount,
@@ -24,6 +26,7 @@ const addPayment = async (req, res, next) => {
     cardExpiry,
     cvv,
     status,
+    cartItems, // Save cartItems to the payment document
   });
 
   try {
@@ -35,6 +38,7 @@ const addPayment = async (req, res, next) => {
   return res.status(201).json({ payment: newPayment });
 };
 
+// Get payment by ID
 const getPaymentById = async (req, res, next) => {
   const id = req.params.id;
 
@@ -51,9 +55,10 @@ const getPaymentById = async (req, res, next) => {
   return res.status(200).json({ payment });
 };
 
+// Update payment
 const updatePayment = async (req, res, next) => {
   const id = req.params.id;
-  const { amount, currency, cardNumber, cardExpiry, cvv, status } = req.body;
+  const { amount, currency, cardNumber, cardExpiry, cvv, status, cartItems } = req.body;
 
   let payment;
   try {
@@ -66,6 +71,7 @@ const updatePayment = async (req, res, next) => {
         cardExpiry,
         cvv,
         status,
+        cartItems, // Include cart items in the update
       },
       { new: true }
     );
@@ -79,6 +85,7 @@ const updatePayment = async (req, res, next) => {
   return res.status(200).json({ payment });
 };
 
+// Delete payment
 const deletePayment = async (req, res, next) => {
   const id = req.params.id;
 

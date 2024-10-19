@@ -139,18 +139,25 @@ function ItemDetails() {
                     <td className="admin_tbl_td">{item.price}</td>
                     <td className="admin_tbl_td">{item.description}</td>
                     <td className="admin_tbl_td">
+
+                    <button className="btn_dash_payment">
+                        Payment
+                      </button>
+                      
                       <Link
                         to={`/updateinventoryitem/${item._id}`}
                         className="btn_dash_admin"
                       >
                         Update
                       </Link>
+                      
                       <button
                         onClick={() => deleteHandler(item._id)}
                         className="btn_dash_admin_dlt"
                       >
                         Delete
                       </button>
+                     
                     </td>
                   </tr>
                 ))}

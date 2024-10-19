@@ -22,7 +22,7 @@ import AddRate from "./Components/User/RatingSystem/Add-Rates/AddRate";
 import RateDetails from "./Components/User/RatingSystem/Rate/RateDetails";
 import MyRate from "./Components/User/RatingSystem/MyRate/MyRate";
 import UpdateRate from "./Components/User/RatingSystem/UpdateRate/UpdateRate";
-import RegularCollection from "./Components/User/RegularCollectionManagement/RegularCollection"
+
 
 //Product Management ----------------------->
 //ADMIN
@@ -41,6 +41,7 @@ import UserRegister from "./Components/User/UserManagement/UserRegister/Register
 import UserLogin from "./Components/User/UserManagement/UserLogin/Login";
 import UserProfiel from "./Components/User/UserManagement/UserProfile/UserProfiel";
 import UserUpdateAccount from "./Components/User/UserManagement/UpdateAccount/UpdateAccount";
+
 
 //Shopping Cart ----------------------->
 //USER
@@ -72,7 +73,14 @@ import BeforHome from "./Components/User/Home/BeforHome";
 import Accept from "./Components/Admin/DiliveryManagement/Dlivery/Accept/Accept";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import InformSupply from "./Components/Admin/InventroyManegment/InformSupply/InformSupply";
-import Eticket from "./Pages/Eticket";
+import RegularCollection from "./Components/User/RegularCollectionManagement/RegularCollection";
+import AddRegisterUserPayment from "./Components/User/RegularCollectionManagement/AddRegisterUserPayment";
+
+
+
+import RegisterUserPaymentDetails from "./Components/Admin/RegisterUserPaymentDetails/RegisterUserPaymentDetails";
+import SpecialCollectionPayment from "./Components/User/SpecialCollection/SpecialCollectionPayment";
+import PaymentsList from "./Components/Admin/PaymentList/PaymentsList";import Eticket from "./Pages/Eticket";
 import Eticketadmin from "./Pages/Admin"
 import Error from "./Pages/404"
 import AboutUs from "./Components/User/Home/AboutUs";
@@ -92,6 +100,9 @@ import Orderdetails from './Components/User/Specialorder/Orderdetails/Orders';
 import Updateorder from './Components/User/Specialorder/Updateorder/Updateorder';
 import AddPayment from './Components/User/Specialorder/PaymentProcess/AddPayment';
 import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymentsuccessful';
+// special collection request admin
+import SpecialOrderDis from './Components/Admin/Specialorder/Orderdetail/SpecialOrderdis';
+import DriverNot from './Components/Driver/Notifications/Notifications';
 
 
 
@@ -130,6 +141,8 @@ function App() {
           <Route path="/updateaccount/:id" element={<UserUpdateAccount />} />
           {/* Regular Collection  */}
           <Route path="/request" element={<RegularCollection/>}/>
+          {/*Regular Collection Payment */}
+          <Route path="/addregisteruserpayment" element={<AddRegisterUserPayment/>}/>
 
           {/* --------------- ADMIN Side ---------------*/}
           {/*Admin Home*/}
@@ -143,11 +156,6 @@ function App() {
           <Route path="/delivrydata" element={<DliveryData />} />
           <Route path="/accept/:id" element={<Accept />} />
           {/*Driver*/}
-          <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
-          <Route path="/driveraccept/:id" element={<DriverAccept />} />
-          <Route path="/DriverDash" element={<DriverDash />} />
-          <Route path="/DriversDetails" element={<DriversDetails />} />
-          <Route path="/Notifications" element={<Notifications />} />
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
@@ -200,16 +208,31 @@ function App() {
           <Route path="/add-cart" element={<AddToCart />} />
           <Route path="/view-cart" element={<ViewCart />} />
           <Route path="/update-cart/:id" element={<EditCart />} />
-          <Route path="/add-payment" element={<AddPayment />} />
+          {/* <Route path="/add-payment" element={<AddPayment />} /> */}
           <Route path="/requesthandling" element={<RequestHandling/>}/>
           {/* Driver Panel */}
           <Route path="/driverlogin" element={<DriverLogin />} />
+
+          <Route path="/registeruserpaymentdetails" element={<RegisterUserPaymentDetails />} />
+
+          {/* special collection */}
+          <Route path="/specialcollectionpayment" element={<SpecialCollectionPayment />} />
+          <Route path="/paymentslist" element={<PaymentsList />} />
           {/* RecycleService - user */}
           <Route path="/waste" element={<Wasteform/>}/>
           <Route path="/summary" element={<Summarypage/>}/>
           <Route path="/bill" element={<BillPage/>}/>
           {/* RecycleService - admin */}
           <Route path="/adminr" element={<Adminpanel/>}/>
+          
+          {/* special collection request */}
+          <Route path="/addspecialorder" element={<Addorder/>}/>
+          <Route path="/specialorderdetails" element={<Orderdetails/>} />
+          <Route path="/specialorderdetails/:id" element={<Updateorder/>}/>
+          <Route path="/specialpayment" element={<AddPayment/>}/>
+          <Route path="/specialpaymentsuc" element={<PaymentSuccess/>}/>
+          <Route path="/specialorderdisadmin" element={<SpecialOrderDis/>}/>
+          <Route path="/drivernot" element={<DriverNot/>}/>
         </Routes>
       </React.Fragment>
     </div>
