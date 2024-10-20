@@ -33,63 +33,93 @@ const BillPage = () => {
 
   const generatePDF = () => {
     const doc = new jsPDF();
-    
-    // Add title
-    doc.setFontSize(20);
-    doc.text('Payment Receipt', 20, 20);
-    
+  
+    // Add title with bold style
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(24);
+    doc.text('Payment Receipt', 105, 20, { align: 'center' }); // Center the title
+  
     // Add downloaded date and time
     const now = new Date();
-    const formattedDate = now.toLocaleString(); // Format the date and time
+    const formattedDate = now.toLocaleString();
     doc.setFontSize(12);
-    doc.text(`Downloaded on: ${formattedDate}`, 20, 30); // Add date below the title
+    doc.setFont('helvetica', 'normal');
+    doc.text(`Downloaded on: ${formattedDate}`, 20, 30); 
   
-    // Add email and address
+    // Add separator line
+    doc.setLineWidth(0.5);
+    doc.line(20, 35, 190, 35); // Draw a line under the header
+  
+    // Add customer email and address section
     doc.setFontSize(14);
-    const emailY = 40;  // y-coordinate for email
-    const addressY = emailY + 10; // y-coordinate for address
+    doc.setFont('helvetica', 'bold');
+    doc.text('Customer Information', 20, 45);
+  
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    const emailY = 55; // y-coordinate for email
+    const addressY = emailY + 10;
     doc.text(`Email: ${paymentDetails.email}`, 20, emailY);
     doc.text(`Address: ${paymentDetails.address}`, 20, addressY);
   
     // Add waste details table
     const wasteData = paymentDetails.wasteDetails.map((waste) => [
-      waste.name, 
-      `Rs ${waste.pricePerKg}`, 
-      waste.quantity, 
-      `Rs ${waste.total}`
+      waste.name,
+      `Rs ${waste.pricePerKg.toFixed(2)}`, 
+      `${waste.quantity} Kg`, 
+      `Rs ${waste.total.toFixed(2)}`
     ]);
   
     // Define the starting position for the table
-    const startY = addressY + 20; // 20 units below the address
+    const startY = addressY + 20;
     doc.autoTable({
       startY: startY,
       head: [['Name', 'Price/Kg', 'Weight', 'Total']],
       body: wasteData,
-      styles: { cellPadding: 3, fontSize: 12 }, // Add some padding for better readability
-      theme: 'grid' // Optional: add grid style to the table
+      styles: { cellPadding: 5, fontSize: 12, valign: 'middle' },
+      headStyles: { fillColor: [0, 123, 255], textColor: 255 }, // Blue header with white text
+      theme: 'striped', // Optional: striped rows for better readability
+      columnStyles: {
+        1: { halign: 'right' }, // Align price to the right
+        2: { halign: 'center' }, // Center-align weight
+        3: { halign: 'right' } // Align total to the right
+      }
     });
   
     // Add subtotal and payment method
-    const subtotalY = doc.lastAutoTable.finalY + 10; // 10 units below the table
-    doc.text(`Subtotal: Rs ${paymentDetails.subtotal}`, 20, subtotalY);
-    const paymentMethodY = subtotalY + 10; // 10 units below the subtotal
+    const subtotalY = doc.lastAutoTable.finalY + 10;
+    doc.setFont('helvetica', 'bold');
+    doc.text(`Subtotal: Rs ${paymentDetails.subtotal.toFixed(2)}`, 20, subtotalY);
+  
+    const paymentMethodY = subtotalY + 10;
+    doc.setFont('helvetica', 'normal');
     doc.text(`Payment Method: ${paymentDetails.paymentMethod}`, 20, paymentMethodY);
   
     // Add card details if payment method is 'Card'
     if (paymentDetails.paymentMethod === 'Card' && paymentDetails.cardDetails) {
-      const cardDetailsY = paymentMethodY + 20; // 20 units below the payment method
+      const cardDetailsY = paymentMethodY + 20;
+      doc.setFont('helvetica', 'bold');
       doc.text('Card Details:', 20, cardDetailsY);
-      
+  
       const { accountname, bankname, accountnumber } = paymentDetails.cardDetails[0];
+      doc.setFont('helvetica', 'normal');
       doc.text(`Account Name: ${accountname}`, 20, cardDetailsY + 10);
       doc.text(`Bank Name: ${bankname}`, 20, cardDetailsY + 20);
       doc.text(`Account Number: ${accountnumber}`, 20, cardDetailsY + 30);
     }
+
+    // Add a thank-you message at the bottom
+    const footerY = paymentDetails.paymentMethod === 'Card' 
+      ? doc.lastAutoTable.finalY + 100 
+      : doc.lastAutoTable.finalY + 60;
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(12);
+    doc.text('Thank you for using our recycling service!', 105, footerY, { align: 'center' });
   
     // Save the PDF
     doc.save('PaymentReceipt.pdf');
   };
-
+  
   return (
     <>
       <AfterNav />
