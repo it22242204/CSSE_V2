@@ -1,37 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import Sidebar from '../DriverDashBord/SideBar/Sidebar';
-
+import './drivernotifi.css'
 const DriverNotification = () => {
-  const [assignedRequests, setAssignedRequests] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    // Function to fetch assigned collection requests for the driver
-    const fetchAssignedRequests = async () => {
-      try {
-        setLoading(true);
-        // Fetch the collection requests assigned to the driver
-        const response = await axios.get('http://localhost:8080/assigned-requests'); 
-        setAssignedRequests(response.data.assignedRequests);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching assigned requests:', error);
-        setLoading(false);
-      }
-    };
-
-    fetchAssignedRequests();
-  }, []);
-  
+  // Setting fake user details directly in the state
+  const [assignedRequests] = useState([
+    {
+      _id: "fake123", 
+      TypeofUser: "BusinessUser", 
+      Name: "Sunil", 
+      PhoneNumber: "774556120", 
+      Address: "warakapola", 
+      ColletionOption: "Monthly", 
+      Amount: "5000"
+    },
+    {
+      _id: "fake123", 
+      TypeofUser: "BusinessUser", 
+      Name: "shabry", 
+      PhoneNumber: "0766440967", 
+      Address: "kandy", 
+      ColletionOption: "daily", 
+      Amount: "2000"
+    },
+    {
+      _id: "fake123", 
+      TypeofUser: "BusinessUser", 
+      Name: "Sliit", 
+      PhoneNumber: "0112345678", 
+      Address: "Malabe", 
+      ColletionOption: "daily", 
+      Amount: "2000"
+    }
+  ]);
+  const [loading] = useState(false); // No need to load since we're using fake data
 
   return (
     <div>
       <Sidebar />
       <div className="driver-notification-container">
-        <h2>Assigned Collection Requests</h2>
+        <h2 className='driver_noti_h2'>Assigned Collection Requests</h2>
         {loading ? (
-          <p>Loading assigned requests...</p>
+          <p className='driver_noti_p'> Loading assigned requests...</p>
         ) : assignedRequests.length > 0 ? (
           <table className="assigned-request-table">
             <thead>
@@ -58,7 +67,7 @@ const DriverNotification = () => {
             </tbody>
           </table>
         ) : (
-          <p>No assigned collection requests available.</p>
+          <p className='driver_noti_p'>No assigned collection requests available.</p>
         )}
       </div>
     </div>
