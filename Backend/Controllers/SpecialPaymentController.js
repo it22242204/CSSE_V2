@@ -1,6 +1,6 @@
 const SpecialPayment = require("../Model/SpecialPaymentModel");
 
-// Get all user register payments
+// Get all special payments
 const getAllSpecialPayments = async (req, res, next) => {
   let payments;
   try {
@@ -15,17 +15,19 @@ const getAllSpecialPayments = async (req, res, next) => {
   return res.status(200).json({ payments });
 };
 
-// Add a new user register payment
+// Add a new special payment
 const addSpecialPayment = async (req, res, next) => {
-  const { amount, currency, cardNumber, cardExpiry, cvv, status } = req.body;
+  const { contactname, amount, currency, cardNumber, cardExpiry, cvv, status, colletionOption } = req.body;
 
   const newPayment = new SpecialPayment({
+    contactname,
     amount,
     currency,
     cardNumber,
     cardExpiry,
     cvv,
     status,
+    colletionOption, // Added colletionOption
   });
 
   try {
@@ -37,13 +39,13 @@ const addSpecialPayment = async (req, res, next) => {
   return res.status(201).json({ payment: newPayment });
 };
 
-// Get a single user register payment by ID
+// Get a single special payment by ID
 const getSpecialPaymentById = async (req, res, next) => {
   const id = req.params.id;
 
   let payment;
   try {
-    payment = await RegisterUserPayment.findById(id);
+    payment = await SpecialPayment.findById(id);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Server Error" });
@@ -54,22 +56,24 @@ const getSpecialPaymentById = async (req, res, next) => {
   return res.status(200).json({ payment });
 };
 
-// Update a user register payment by ID
+// Update a special payment by ID
 const updateSpecialPayment = async (req, res, next) => {
   const id = req.params.id;
-  const { amount, currency, cardNumber, cardExpiry, cvv, status } = req.body;
+  const { contactname, amount, currency, cardNumber, cardExpiry, cvv, status, colletionOption } = req.body;
 
   let payment;
   try {
-    payment = await RegisterUserPayment.findByIdAndUpdate(
+    payment = await SpecialPayment.findByIdAndUpdate(
       id,
       {
+        contactname,
         amount,
         currency,
         cardNumber,
         cardExpiry,
         cvv,
         status,
+        colletionOption, // Added colletionOption for update
       },
       { new: true }
     );
@@ -83,13 +87,13 @@ const updateSpecialPayment = async (req, res, next) => {
   return res.status(200).json({ payment });
 };
 
-// Delete a user register payment by ID
+// Delete a special payment by ID
 const deleteSpecialPayment = async (req, res, next) => {
   const id = req.params.id;
 
   let payment;
   try {
-    payment = await RegisterUserPayment.findByIdAndDelete(id);
+    payment = await SpecialPayment.findByIdAndDelete(id);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Server Error" });

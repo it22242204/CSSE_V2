@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import Sidebar from "../AdminDashBord/SideBar/Sidebar";
+import { format } from 'date-fns'; // Importing from date-fns for formatting
 
 const URL = "http://localhost:8080/userregisterpayment"; 
 
@@ -44,7 +44,7 @@ function RegisterUserPaymentDetails() {
       try {
         await axios.delete(`${URL}/${_id}`);
         window.alert("Payment deleted successfully!");
-        setPayments((prev) => prev.filter((payment) => payment._id !== _id)); // Update state without reloading
+        setPayments((prev) => prev.filter((payment) => payment._id !== _id));
       } catch (error) {
         console.error("Error deleting payment:", error);
       }
@@ -58,20 +58,18 @@ function RegisterUserPaymentDetails() {
         const updatedPayment = {
           status: "Refunded",
         };
-        await axios.put(`${URL}/${_id}`, updatedPayment); // Send the updated status to the backend
+        await axios.put(`${URL}/${_id}`, updatedPayment); 
         window.alert("Payment status updated to Refunded!");
         setPayments((prev) => 
           prev.map((payment) => 
             payment._id === _id ? { ...payment, status: "Refunded" } : payment
           )
-        ); // Update the state in the frontend without reloading
+        );
       } catch (error) {
         console.error("Error updating payment status:", error);
       }
     }
   };
-  
-  
 
   return (
     <div>
@@ -96,12 +94,11 @@ function RegisterUserPaymentDetails() {
           <table className="table_details_admin">
             <thead>
               <tr className="admin_tbl_tr">
-              <th className="admin_tbl_th">Name</th>
-              <th className="admin_tbl_th">Collection Option</th>
+                <th className="admin_tbl_th">Name</th>
+                <th className="admin_tbl_th">Collection Option</th>
                 <th className="admin_tbl_th">Amount</th>
                 <th className="admin_tbl_th">Currency</th>
-                <th className="admin_tbl_th">Card Number</th>
-                <th className="admin_tbl_th">Card Expiry</th>
+                <th className="admin_tbl_th">Credited Date</th>
                 <th className="admin_tbl_th">Status</th>
                 <th className="admin_tbl_th">Action</th>
               </tr>
@@ -121,13 +118,14 @@ function RegisterUserPaymentDetails() {
                     <td className="admin_tbl_td">{payment.colletionOption}</td>
                     <td className="admin_tbl_td">{payment.amount}</td>
                     <td className="admin_tbl_td">{payment.currency}</td>
-                    <td className="admin_tbl_td">{payment.cardNumber}</td>
-                    <td className="admin_tbl_td">{payment.cardExpiry}</td>
+                    {/* Format the createdAt field */}
+                    <td className="admin_tbl_td">
+                      {format(new Date(payment.createdAt), 'dd/MM/yyyy HH:mm:ss')}
+                    </td>
                     <td className="admin_tbl_td">{payment.status}</td>
                     <td className="admin_tbl_td">
-                    <button onClick={() => updateHandler(payment._id) }className="btn_dash_admin" >Update</button>
+                      <button onClick={() => updateHandler(payment._id)} className="btn_dash_admin">Update</button>
                       <button onClick={() => deleteHandler(payment._id)} className="btn_dash_admin_dlt">Delete</button>
-                    
                     </td>
                   </tr>
                 ))}

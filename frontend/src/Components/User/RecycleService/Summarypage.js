@@ -5,7 +5,7 @@ import AfterNav from '../Home/NavBar/AfterNav';
 import Footer from '../../Footer/Footer';
 
 const SummaryPage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const location = useLocation();
 
   const initialWasteDetails = location.state?.wasteDetails || [];
@@ -17,10 +17,15 @@ const SummaryPage = () => {
   const [userEmail, setUserEmail] = useState('');
   const [useraddress, setUserAddress] = useState('');
 
-  // Retrieve user email from localStorage
+  // State for date and time
+  const today = new Date();
+  const todayString = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+  const [date, setDate] = useState(todayString); // Set default date to today
+  const [time, setTime] = useState(''); // Leave time empty initially
+
+  // Retrieve user email and address from localStorage
   useEffect(() => {
     const email = localStorage.getItem('userEmail');
-    console.log("Email from local storage:", email); // Debugging line
     if (email) {
       setUserEmail(email);
     } else {
@@ -28,7 +33,6 @@ const SummaryPage = () => {
       navigate('/login');
     }
     const address = localStorage.getItem('userAddress');
-    console.log("Address from local storage:", address); // Debugging line
     if (address) {
       setUserAddress(address);
     } else {
@@ -36,7 +40,7 @@ const SummaryPage = () => {
       navigate('/login');
     }
   }, [navigate]);
-   
+
   // Calculate subtotal dynamically
   const subtotal = wasteDetails.reduce(
     (total, waste) => total + waste.pricePerKg * waste.quantity,
@@ -46,12 +50,23 @@ const SummaryPage = () => {
   const handleConfirm = async () => {
     if (wasteDetails.length === 0) {
       alert('No wastes available. Please select a waste.');
-      navigate('/waste')
+      navigate('/waste');
       return;
     }
 
     if (paymentMethod === 'Card' && (!accountname || !bankname || !accountnumber)) {
       alert('Please fill in all card details.');
+      return;
+    }
+
+    // Check if date and time are valid
+    if (!date) {
+      alert('Please select a date.');
+      return;
+    }
+
+    if (!time) {
+      alert('Please select a time.');
       return;
     }
 
@@ -65,6 +80,8 @@ const SummaryPage = () => {
       })),
       subtotal,
       address: useraddress,
+      date,
+      time,
       paymentMethod,
       cardDetails: paymentMethod === 'Card' ? [{ accountname, bankname, accountnumber }] : null,
     };
@@ -82,8 +99,6 @@ const SummaryPage = () => {
 
       const data = await response.json();
       alert('Payment details saved successfully!');
-      console.log('Response:', data);
-
       navigate('/bill', { state: { paymentDetails } });
     } catch (error) {
       console.error('Error:', error);
@@ -144,6 +159,25 @@ const SummaryPage = () => {
         )}
 
         <h3 className="subtotal">Subtotal: Rs {subtotal}</h3>
+
+        {/* Date and Time Picker */}
+        <h4>Select Date and Time:</h4>
+        <div className="date-time-picker">
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            min={todayString} // Prevent selecting past dates
+            required
+          />
+          <input
+            type="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            required
+            min={date === todayString ? new Date().toTimeString().slice(0, 5) : undefined} // Disable past times if today is selected
+          />
+        </div>
 
         <div className="payment-method">
           <h4>Select Payment Method:</h4>

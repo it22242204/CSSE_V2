@@ -106,7 +106,7 @@ import PaymentSuccess from './Components/User/Specialorder/PaymentProcess/Paymen
 import SpecialOrderDis from './Components/Admin/Specialorder/Orderdetail/SpecialOrderdis';
 import DriverNot from './Components/Driver/Notifications/Notifications';
 
-
+import SpecialCollectionPaymentDetails from "./Components/Admin/Specialorder/Orderdetail/SpecialCollectionPaymentDetails";
 
 //Recycle Service - User
 import Wasteform from './Components/User/RecycleService/Wasteform';
@@ -115,6 +115,8 @@ import BillPage from './Components/User/RecycleService/BillPage';
 
 //Recycle service - admin
 import Adminpanel from './Components/Admin/RecycleService/Adminpanel';
+import DriverNotification from "./Components/Driver/DriverNotification/RegularDriverNotification";
+//import DriverNotification from "./Components/Driver/DriverNotification/RegularDriverNotification";
 
 function App() {
   return (
@@ -163,7 +165,8 @@ function App() {
           <Route path="/driverdelivrydata" element={<DriverDliveryData />} />
           <Route path="/driveraccept" element={<DriverAccept />} />
           <Route path="/DriverProfile" element={<DriversDetails />} />
-          <Route path="/Notifications" element={<Notifications />} />
+          <Route path="/notifications" elements={<DriverNotification />}/>
+          {/* <Route path="/Notifications" element={<Notifications />} /> */}
           <Route path="/adddriver" element={<AddDriver />} />
           <Route path="/driverdetails" element={<DriverDetails />} />
           <Route path="/updateedriver/:id" element={<UpdateDriver />} />
@@ -215,6 +218,7 @@ function App() {
 
           {/* special collection */}
           <Route path="/specialcollectionpayment" element={<SpecialCollectionPayment />} />
+
           <Route path="/paymentslist" element={<PaymentsList />} />
           {/* RecycleService - user */}
           <Route path="/waste" element={<Wasteform/>}/>
@@ -231,6 +235,7 @@ function App() {
           <Route path="/specialpaymentsuc" element={<PaymentSuccess/>}/>
           <Route path="/specialorderdisadmin" element={<SpecialOrderDis/>}/>
           <Route path="/drivernot" element={<DriverNot/>}/>
+          <Route path="/specialcollectionpaymentdetails" element={<SpecialCollectionPaymentDetails/>}/>
         </Routes>
       </React.Fragment>
     </div>

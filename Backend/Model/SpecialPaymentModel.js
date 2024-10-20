@@ -3,13 +3,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const specialPaymentSchema = new Schema({
+  contactname: {
+    type: String,  // Change to String as contact names are usually text
+    required: true,
+  },
   amount: {
     type: Number,
     required: true,
   },
   currency: {
     type: String,
-    required: true,
+    required: true, 
   },
   cardNumber: {
     type: String,
@@ -25,7 +29,11 @@ const specialPaymentSchema = new Schema({
   },
   status: {
     type: String,
-    required: true,
+    default: "Paid", // Default status is Paid
+  },
+  colletionOption: {
+    type: String,  // Assuming you want to include the collection option field
+    required: false,
   },
   createdAt: {
     type: Date,

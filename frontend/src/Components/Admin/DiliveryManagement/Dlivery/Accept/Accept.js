@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router";
-import Sidebar from "../../../AdminDashBord/SideBar/Sidebar";
+import Sidebar from "../../../../Driver/DriverDashBord/SideBar/Sidebar";
 
 function Accept() {
   const [inputs, setInputs] = useState({});
@@ -44,7 +44,7 @@ function Accept() {
 
     sendRequest().then(() => {
       window.alert("Status Added successfully!");
-      history("/delivrydata");
+      history("/driverdelivrydata");
     });
   };
   return (

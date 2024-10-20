@@ -58,7 +58,7 @@ const AdminPanel = () => {
   };
 
   const handleAssignDriver = (orderId) => {
-    navigate(`/assigndriver`, { state: { orderId } }); 
+    navigate(`/assigndriver, { state: { orderId } }`); 
   };
 
   return (
@@ -195,6 +195,8 @@ const AdminPanel = () => {
 
                           <h4 style={{ marginTop: '10px' }}>Payment Details:</h4> 
                           <p><strong>Total Amount:</strong> Rs {payment.subtotal}</p> 
+                          <p><strong>Date:</strong> {new Date(payment.date).toLocaleDateString()}</p>
+                          <p><strong>Time:</strong>{payment.time}</p> 
                           <p><strong>Payment Method:</strong> {payment.paymentMethod}</p> 
 
                           {payment.paymentMethod === 'Card' && payment.cardDetails && (

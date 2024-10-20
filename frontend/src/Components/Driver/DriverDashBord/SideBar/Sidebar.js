@@ -20,7 +20,7 @@ const Sidebar = ({ children }) => {
       
               <p
                 className="nav_item"
-                onClick={() => (window.location.href = "/Notifications")}
+                onClick={() => (window.location.href = "/notifications")}
               >
                 Notifications
               </p>

@@ -50,7 +50,7 @@ const PaymentsList = () => {
         const updatedPayment = {
           status: "Refunded",
         };
-        await axios.put(`http://localhost:8081/payments/${_id}`, updatedPayment);
+        await axios.put(`http://localhost:8080/payments/${_id}`, updatedPayment);
         setPayments((prev) =>
           prev.map((payment) =>
             payment._id === _id ? { ...payment, status: "Refunded" } : payment

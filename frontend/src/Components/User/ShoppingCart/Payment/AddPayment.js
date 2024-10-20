@@ -13,6 +13,7 @@ const AddPayment = ({ cartItems }) => {
     status: "paid",
   });
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState({}); // State to store validation errors
 
   // Calculate total amount and set the payment details
   useEffect(() => {
@@ -28,8 +29,52 @@ const AddPayment = ({ cartItems }) => {
     }
   }, [cartItems]);
 
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "cardExpiry":
+        const today = new Date();
+        const [year, month] = value.split("-").map(Number);
+        const expiryDate = new Date(year, month - 1); // MM starts from 0 in Date object
+        if (expiryDate <= today) {
+          error = "Card expiry must be a future date.";
+        }
+        break;
+      case "cvv":
+        if (!/^\d{3}$/.test(value)) {
+          error = "CVV must be exactly 3 digits.";
+        }
+        break;
+      case "cardNumber":
+        if (!/^\d{16}$/.test(value)) {
+          error = "Card number must be exactly 16 digits.";
+        }
+        break;
+      default:
+        break;
+    }
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: error,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate fields before submitting
+    for (const [key, value] of Object.entries(payment)) {
+      validateField(key, value);
+    }
+
+    // Check for errors before submitting
+    if (Object.values(errors).some((error) => error)) {
+      alert("Please fix the errors before submitting.");
+      return;
+    }
+
     try {
       const paymentData = {
         ...payment,
@@ -53,7 +98,14 @@ const AddPayment = ({ cartItems }) => {
       ...prevPayment,
       [name]: value,
     }));
+    validateField(name, value); // Validate field on change
   };
+
+
+// Get current month and year
+const today = new Date();
+const currentYear = today.getFullYear();
+const currentMonth = String(today.getMonth() + 1).padStart(2, '0'); // Month is 0-based, so we add 1
 
   // Inline styles as JS objects
   const styles = {
@@ -139,6 +191,7 @@ const AddPayment = ({ cartItems }) => {
               onChange={handleChange}
               required
             />
+            {errors.cardNumber && <p className="payment-error-message">{errors.cardNumber}</p>} {/* Display error */}
           </div>
           <div>
             <label className="form_box_item_lable">Card Expiry:</label>
@@ -150,6 +203,7 @@ const AddPayment = ({ cartItems }) => {
               onChange={handleChange}
               required
             />
+            {errors.cardExpiry && <p className="payment-error-message">{errors.cardExpiry}</p>} {/* Display error */}
           </div>
           <div>
             <label className="form_box_item_lable">CVV:</label>
@@ -161,8 +215,10 @@ const AddPayment = ({ cartItems }) => {
               onChange={handleChange}
               required
             />
+            {errors.cvv && <p className="payment-error-message">{errors.cvv}</p>} {/* Display error */}
           </div>
           <button className="admin_form_cneter_btn" type="submit">
+          {/* onClick={() => (window.location.href = "/adddelivery")} */}
             Pay
           </button>
           {error && <p className="payment-error-message">{error}</p>}

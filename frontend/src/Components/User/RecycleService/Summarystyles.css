@@ -1,135 +1,158 @@
 /* styles.css */
 .summary-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .summary-header {
-    margin-bottom: 20px;
-    color: #333;
-  }
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .summary-text {
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .subtotal {
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #4CAF50;
-    text-align: center;
-  }
-  
-  .payment-method {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;  
-    align-items: center;    
-  }
-  
-  .payment-options {
-    display: flex;           
-    justify-content: space-around;
-    width: 100%;            
-  }
-  
-  .payment-label {
-    display: flex;              
-    align-items: center;       
-    margin: 5px 10px;         
-    font-size: 1.2em;        
-  }
- 
-  .confirm-button {
-    display: flex;
-    padding: 10px 80px;
-    justify-content: center;  
-    margin-top: 20px;
-    padding: 10px px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-  }
-  
-  
-  .confirm-button:hover {
-    background-color: #45a049; 
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1; 
-  }
-  .close-icon{
-    cursor: pointer;
-  }
-  .card-details {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
+.summary-header {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.summary-text {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.subtotal {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+}
+
+.payment-method {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+}
+
+.payment-options {
+  display: flex;           
+  justify-content: space-around;
+  width: 100%;            
+}
+
+.payment-label {
+  display: flex;              
+  align-items: center;       
+  margin: 5px 10px;         
+  font-size: 1.2em;        
+}
+
+.confirm-button {
+  display: flex;
+  padding: 10px 80px;
+  justify-content: center;  
+  margin-top: 20px;
+  padding: 10px px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+
+.confirm-button:hover {
+  background-color: #45a049; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f1f1f1; 
+}
+.close-icon{
+  cursor: pointer;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-details input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.card-details input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+.card-details input::placeholder {
+  color: #888;
+}
+
+.card-details input[type="password"] {
+  letter-spacing: 2px;
+}
+
+.date-time-picker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date-time-picker input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 48%; /* Adjust width to fit two inputs side by side */
+}
+
+.date-time-picker input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
   .card-details input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: border-color 0.2s;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  .card-details input:focus {
-    outline: none;
-    border-color: #4caf50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
-  }
-  
-  .card-details input::placeholder {
-    color: #888;
-  }
-  
-  .card-details input[type="password"] {
-    letter-spacing: 2px;
-  }
-  
-  @media (max-width: 600px) {
-    .card-details input {
-      font-size: 14px;
-      padding: 8px;
-    }
-  }
-  
-  
+}

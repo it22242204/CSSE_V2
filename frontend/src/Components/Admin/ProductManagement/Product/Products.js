@@ -125,6 +125,9 @@ const Products = () => {
               </button>
             </td>
           </tr>
+          <button className="btn_dash_admin" onClick={() => (window.location.href = "/paymentslist")}>
+            Product Payment
+          </button>
           <button className="btn_dash_admin" onClick={handlePrint}>
             Generate Report
           </button>
@@ -156,6 +159,7 @@ const Products = () => {
               ))}
             </tbody>
           </table>
+          
         </div>
       </div>
     </div>

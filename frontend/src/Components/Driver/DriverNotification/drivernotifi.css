@@ -1,0 +1,25 @@
+/* DriverNotification.css */
+
+.driver-notification-container {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 250px); 
+}
+
+
+.assigned-request-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.assigned-request-table th,
+.assigned-request-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.assigned-request-table th {
+    background-color: #05043f;
+}

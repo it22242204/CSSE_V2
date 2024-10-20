@@ -5,9 +5,10 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
-import emailjs from '@emailjs/browser';
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import emailjs from "@emailjs/browser";
+import './updateTask.css';
 
 const MyVerticallyCenteredModal = (props) => {
   const { selectedTask } = useSelector((state) => state.tasks);
@@ -17,7 +18,7 @@ const MyVerticallyCenteredModal = (props) => {
   const [topic, settopic] = useState("");
   const [description, setDescription] = useState("");
   const [responce, setResponce] = useState("");
-  const [ticketstatus, setStatus] = useState('');
+  const [ticketstatus, setStatus] = useState("");
   const [id, setId] = useState(0);
   const dispatch = useDispatch();
 
@@ -67,22 +68,27 @@ const MyVerticallyCenteredModal = (props) => {
 
   const sendEmail = () => {
     emailjs
-      .send('service_79842mg', 'template_ugi240w', {
-        customername,
-        email,
-        topic,
-        description,
-        responce,
-        ticketstatus,
-      }, 'jOx5WsWVCJyqUC1Gp') // Using the public key as the user ID
+      .send(
+        "service_79842mg",
+        "template_ugi240w",
+        {
+          customername,
+          email,
+          topic,
+          description,
+          responce,
+          ticketstatus,
+        },
+        "jOx5WsWVCJyqUC1Gp"
+      ) // Using the public key as the user ID
       .then(
         () => {
-          console.log('SUCCESS!');
+          console.log("SUCCESS!");
           props.onHide(); // Close the modal after sending the email
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          console.log('Message not send')
+          console.log("FAILED...", error.text);
+          console.log("Message not send");
         }
       );
   };
@@ -94,19 +100,20 @@ const MyVerticallyCenteredModal = (props) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+      <Box className="modal-box">
+        <Typography id="modal-modal-title" className="modal-box__title">
           Response to E-ticket
         </Typography>
 
-        <div className="mb-3">
-          <label htmlFor="formBasicResponce" className="form-label">Response</label>
+        <div className="modal-box__form">
+          <label htmlFor="formBasicResponce" className="modal-box__form-label">
+            Response
+          </label>
           <textarea
-            className="form-control"
+            className="modal-box__form-textarea"
             id="formBasicResponce"
             placeholder="Customer issues response"
             value={responce}
-            style={{ height: '100px' }}
             onChange={(e) => setResponce(e.target.value)}
           ></textarea>
         </div>
@@ -115,14 +122,18 @@ const MyVerticallyCenteredModal = (props) => {
           Status of the E-ticket
         </Typography>
         <Dropdown
+          className="modal-box__dropdown"
           options={options}
           onChange={(option) => setStatus(option.value)}
           value={ticketstatus}
           placeholder="Select an option"
-        /><br />
+        />
 
-        <div className="text-end">
-          <Button variant="primary" onClick={updateAndSendEmail}>
+        <div className="modal-box__button">
+          <Button
+            className="modal-box__button-submit"
+            onClick={updateAndSendEmail}
+          >
             Submit
           </Button>
         </div>

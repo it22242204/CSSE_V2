@@ -13,6 +13,8 @@ const recyclePriceSchema = new mongoose.Schema({
   ],
   subtotal: { type: Number, required: true },
   address: { type: String, required: true },
+  date: { type: Date, required: true }, 
+  time: { type: String, required: true },
   paymentMethod: { type: String, required: true },
   cardDetails: [
     {
@@ -28,4 +30,3 @@ const recyclePriceSchema = new mongoose.Schema({
 const Payment = mongoose.model('Price', recyclePriceSchema)
 
 module.exports = Payment;
-

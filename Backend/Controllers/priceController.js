@@ -30,7 +30,7 @@ const getPaymentById = async (req, res) => {
 
 // Controller to add a new payment item
 const addPayment = async (req, res) => {
-  const { email, wasteDetails, subtotal, address, paymentMethod, cardDetails } = req.body;
+  const { email, wasteDetails, subtotal, address, date, time, paymentMethod, cardDetails } = req.body;
 
   // Validate the input data
   if (!email || !wasteDetails || subtotal < 0 || !paymentMethod) {
@@ -38,7 +38,7 @@ const addPayment = async (req, res) => {
   }
 
   try {
-    const newPayment = new Payment({ email, wasteDetails, subtotal, address, paymentMethod, cardDetails });
+    const newPayment = new Payment({ email, wasteDetails, subtotal, address, date, time, paymentMethod, cardDetails });
     await newPayment.save();
     res.status(201).json({ message: 'Payment item added successfully!', payment: newPayment });
   } catch (error) {
