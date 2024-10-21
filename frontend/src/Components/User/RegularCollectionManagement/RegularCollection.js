@@ -50,19 +50,18 @@ const RegularCollection = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // Updated handlePayClick to send data to the backend and show payment popup
+  const handlePayClick = async () => {
     try {
+      // Send the form data to the backend
       const response = await axios.post('http://localhost:8080/regularcollection', formData);
-      alert('Regular Collection Registered Successfully!');
       console.log(response.data);
+      
+      // Show payment popup
+      setShowPaymentPopup(true);
     } catch (error) {
       console.error('Error registering the collection:', error);
     }
-  };
-  
-  const handlePayClick = () => {
-    setShowPaymentPopup(true); // Show payment popup
   };
 
   const closeModal = () => {
@@ -74,7 +73,7 @@ const RegularCollection = () => {
         <AfterNav />
         <div className="request-form-container">
           <h2>Register for Normal waste collection</h2>
-          <form onSubmit={handleSubmit} className="request-form">
+          <form className="request-form">
             <label>Type Of User</label>
             <select name="TypeofUser" value={formData.TypeofUser} onChange={handleInputChange} required>
               <option value="">Select</option>
