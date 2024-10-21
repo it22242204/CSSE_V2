@@ -29,7 +29,17 @@ const regularCollectionSchema = new Schema({
     Amount: {
         type: Number,
         required: true
-    },
+    }
+
 });
 
 module.exports = mongoose.model("regularCollection", regularCollectionSchema);
+
+// {
+//     "TypeofUser": "HouseHoldUser",
+//     "Name":"Habeeb",
+//     "PhoneNumber":"0771234567",
+//     "Address":"warakapola",
+//     "ColletionOption":"Daily",
+//     "Amount":"1000"
+//   }

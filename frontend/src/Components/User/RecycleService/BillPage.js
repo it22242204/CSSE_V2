@@ -33,7 +33,7 @@ const BillPage = () => {
 
   const generatePDF = () => {
     const doc = new jsPDF();
-  // Add title with bold style
+
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(24);
     doc.text('Payment Receipt', 105, 20, { align: 'center' }); // Center the title
@@ -79,7 +79,7 @@ const BillPage = () => {
     ]);
 
     // Define the starting position for the table
-    const startY = addressY + 20;
+    const startY = scheduledY + 40;
     doc.autoTable({
       startY: startY,
       head: [['Name', 'Price/Kg', 'Weight', 'Total']],

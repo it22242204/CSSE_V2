@@ -32,15 +32,29 @@ function AssignDriver() {
       try {
         setLoading(true);
         
-
+        // Simulate assigning driver in the system
+        await axios.put(`${URL}/${driver._id}/assign-driver`);
         
         // Notify the admin
         window.alert(`Driver ${driver.name} has been assigned successfully!`);
 
-      
+        // Send SMS to the driver
+        const smsResponse = await axios.post(SMS_API_URL, {
+          phoneNumber: driver.phone,
+          message: "You have a new delivery assignment. Please check your dashboard for details."
+        });
+
+        if (smsResponse.status === 200) {
+          window.alert(`SMS sent to ${driver.name}: ${driver.phone}`);
+        } else {
+          window.alert(`Failed to send SMS to ${driver.name}`);
+        }
+
+        setLoading(false);
       } catch (error) {
         console.error("Error assigning the driver:", error);
-        
+        window.alert("An error occurred while assigning the driver.");
+        setLoading(false);
       }
     }
   };

@@ -86,13 +86,13 @@ const RequestHandling = () => {
                   <td>{request.ColletionOption}</td>
                   <td>{request.Amount}</td>
                   <td>
-                    {/* <button 
+                    <button 
                       onClick={() => handleAccept(request._id, request.PhoneNumber)} 
                       className="accept-button"
                       disabled={isLoading} // Disable button while loading
                     >
                       {isLoading ? 'Processing...' : 'Accept'}
-                    </button> */}
+                    </button>
                     <button onClick={() => handleAssignDriver(request._id)} className="assign-button">
                       Assign Driver
                     </button>

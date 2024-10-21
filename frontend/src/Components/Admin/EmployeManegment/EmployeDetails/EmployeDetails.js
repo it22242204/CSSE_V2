@@ -68,7 +68,13 @@ function EmployeDetails() {
       <Sidebar/>
       <div className="children_div_admin">
         <div className="dash_button_set">
-          
+          <button
+            className="btn_dash_admin"
+            onClick={() => (window.location.href = "/addemployee")}
+          >
+            Add New Employee
+          </button>
+
           <tr>
             <td className="">
               <input
@@ -93,7 +99,7 @@ function EmployeDetails() {
 
         <div className="tbl_con_admin" ref={ComponentsRef}>
           <h1 className="topic_inventory">
-            User Account
+            Employe Account
             <span className="sub_topic_inventory"> Details</span>{" "}
           </h1>
           <table className="table_details_admin">
